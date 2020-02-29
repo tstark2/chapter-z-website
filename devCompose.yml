@@ -1,0 +1,11 @@
+version: "3"
+services:
+  server:
+    tty: true
+    stdin_open: true
+    image: registry.gitlab.com/tstark2/static-server:1.0.0
+    container_name: chapterZ
+    volumes:
+      - "/Users/todd/Documents/Projects/chapter-z-website/static:/static"
+    ports:
+      - 32404:80

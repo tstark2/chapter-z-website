@@ -4,3 +4,40 @@
     --purple: #2e1e5c;
     --yellow: #eca706;
 }
+
+body {
+    margin:0;
+}
+
+#mainHeader {
+    background-color:var(--purple);
+}
+
+#mainHeader div {
+    width:75vw;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+#mainHeader div img {
+    height:150px;
+    width:auto;
+    border:2px solid var(--yellow);
+    border-radius:50%;
+    padding:3px;
+}
+
+#mainHeader h1 {
+    color:#fff;
+}
+
+#mainHeader nav a {
+    color:#fff;
+    text-decoration:none;
+}
+
+#mainHeader nav a:hover {
+    color:var(--yellow);
+}

@@ -1,0 +1,23 @@
+{
+  "name": "chapter_z_website",
+  "version": "1.0.0",
+  "description": "A website for GWRAA Illinois Chapter Z",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tstark2/chapter-z-website.git"
+  },
+  "author": "Todd Stark II <todd2stark@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/tstark2/chapter-z-website/issues"
+  },
+  "homepage": "https://gitlab.com/tstark2/chapter-z-website#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}

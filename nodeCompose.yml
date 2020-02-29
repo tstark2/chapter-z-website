@@ -1,0 +1,12 @@
+version: "3"
+services:
+  server:
+    tty: true
+    stdin_open: true
+    image: node:alpine
+    container_name: chapterZ-node
+    volumes:
+      - "/Users/todd/Documents/Projects/chapter-z-website:/code"
+    ports:
+      - 32405:80
+    command: node /code/index.js
