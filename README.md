@@ -10,3 +10,10 @@
 * History
 * Newsletter
 * New Member Sign Up Form?
+  * Link to national page's sign up form
+
+## APIs
+
+* Photos: Facebook
+* Calendar: Google
+* Newsletter: Google Docs
