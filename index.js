@@ -1,10 +1,59 @@
 const express = require("express");
 const app = express();
-// const router = express.Router();
+const fetch = require('node-fetch');
+const google = 'https://www.googleapis.com';
+const fs = require('fs');
+const http = require('http');
+
+require('dotenv').config();
 
 app.use(express.static(`${__dirname}/static`));
 
-const server = app.listen(32405, () => {
+app.get('/api/calendar', (request, response) => {
+    console.log('GET to /api/calendar');
+    getCalendar().then(events => {
+        response.send(events);
+    }).catch(err => {
+        response.send(err);
+    });
+});
+
+app.get('/api/newsletters', (request, response) => {
+    console.log('GET to /api/newsletters');
+    getNewsletters().then(letters => {
+        response.send(letters);
+    }).catch(err => {
+        response.send(err);
+    });
+});
+
+const server = app.listen(80, () => {
     const port = server.address().port;
     console.log("Server stated at http://localhost:%s", port);
 });
+
+async function getCalendar() {
+    const response = await fetch(`${google}/calendar/v3/calendars/il.chapter.z@gmail.com/events?key=${process.env.GOOGLE_KEY}`);
+
+    if(response.ok) {
+        return await response.json();
+    }
+
+    throw new Error('Error fetching calendar');
+}
+
+async function getNewsletters() {
+    const params = new URLSearchParams;
+    params.append('key', process.env.GOOGLE_KEY);
+    params.append('orderBy', 'createdTime desc');
+    params.append('q', "'1bsjJUNzVpVtM_MACU3Qq_jIxh0_wk8aQ' in parents");
+    params.append('pageSize', 3);
+    const response = await fetch(`${google}/drive/v3/files?${params.toString()}`);
+    
+
+    if(response.ok) {
+        return await response.json();
+    }
+
+    throw new Error(await response.text());
+}

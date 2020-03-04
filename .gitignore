@@ -109,6 +109,5 @@ temp/
 
 # Custom ignore rules
 *.psd
-config.json
 
 # End of https://www.gitignore.io/api/node
