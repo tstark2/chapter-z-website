@@ -41,6 +41,7 @@ function makeEvent(event) {
         const mapPin = document.createElement('i');
         mapPin.className = 'fas fa-map-marker-alt';
         location.setAttribute('href', makeMapLink(event.location));
+        location.setAttribute('target', '_blank');
         location.appendChild(mapPin);
         location.appendChild(document.createTextNode(event.location));
     }
