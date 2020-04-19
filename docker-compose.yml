@@ -1,0 +1,12 @@
+version: "3"
+services:
+  server:
+    tty: true
+    stdin_open: true
+    image: node:alpine
+    container_name: chapterZ-node
+    volumes:
+      - "/var/www/chapter-z-website:/code"
+    ports:
+      - 32405:80
+    command: sh -c "cd /code && npm install && npm start"
