@@ -39,7 +39,7 @@ async function getCalendar() {
     params.append('timeMin', date.toISOString());
     params.append('singleEvents', true);
     params.append('orderBy', 'startTime');
-    params.append('maxResults', 3);
+    params.append('maxResults', 5);
     
     const response = await fetch(`${google}/calendar/v3/calendars/il.chapter.z@gmail.com/events?${params.toString()}`);
 
