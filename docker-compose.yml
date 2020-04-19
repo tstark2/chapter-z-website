@@ -4,9 +4,12 @@ services:
     tty: true
     stdin_open: true
     image: node:alpine
-    container_name: chapterZ-node
+    container_name: chapterZ-dev
     volumes:
       - "/var/www/chapter-z-website:/code"
-    ports:
-      - 32405:80
+    networks: 
+      - chapterZ
     command: sh -c "cd /code && npm install && npm start"
+networks:
+  chapterZ:
+    external: true
