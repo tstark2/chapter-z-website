@@ -33,7 +33,15 @@ const server = app.listen(80, () => {
 });
 
 async function getCalendar() {
-    const response = await fetch(`${google}/calendar/v3/calendars/il.chapter.z@gmail.com/events?key=${process.env.GOOGLE_KEY}`);
+    const date = new Date;
+    const params = new URLSearchParams;
+    params.append('key', process.env.GOOGLE_KEY);
+    params.append('timeMin', date.toISOString());
+    params.append('singleEvents', true);
+    params.append('orderBy', 'startTime');
+    params.append('maxResults', 3);
+    
+    const response = await fetch(`${google}/calendar/v3/calendars/il.chapter.z@gmail.com/events?${params.toString()}`);
 
     if(response.ok) {
         return await response.json();
