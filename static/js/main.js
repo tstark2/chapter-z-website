@@ -1,4 +1,8 @@
+// import * as Headers from './headers.js';
+
 document.addEventListener("DOMContentLoaded", () => {
+    // document.getElementById('mainHeader').appendChild(Headers.mainHeader());
+
   getCalendar().then(events => {
       const eventList = document.querySelector('main aside');
       for(const event of events.items) {
