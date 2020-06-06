@@ -165,10 +165,12 @@ class MainHeader extends HTMLElement {
                 nav.open {
                     width:50vw;
                     padding:6px 12px;
+                    border-left:2px solid var(--white);
                 }
 
                 nav a {
-                    margin-bottom:12px;
+                    margin-bottom:20px;
+                    font-size:1.5em;
                 }
 
                 h1 {
