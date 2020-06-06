@@ -2,7 +2,6 @@ export function makeNavLink(linkObj) {
     const link = document.createElement('a');
     link.href = linkObj.href;
     link.textContent = linkObj.title;
-    link.setAttribute('target', "_blank");
     return link;
 }
 

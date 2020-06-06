@@ -78,3 +78,10 @@ main aside .event a:hover {
     color:var(--yellow);
     text-decoration:underline;
 }
+
+@media (max-width: 576px) {
+    main {
+        grid-template-columns:1fr;
+        width:90vw;
+    }
+}

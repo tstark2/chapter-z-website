@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(err);
   });
 
-  document.querySelector('footer p span').textContent = new Date().getFullYear();
 });
 
 async function getCalendar() {

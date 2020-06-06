@@ -7,6 +7,8 @@ class MainHeader extends HTMLElement {
         const shadow = this.attachShadow({mode: 'open'});
         const header = document.createElement('header');
         const div = document.createElement('div');
+        const menuButton = document.createElement('button');
+        const menuIcon = document.createElement('object');
         const style = document.createElement('style');
 
         // create logo link
@@ -24,6 +26,19 @@ class MainHeader extends HTMLElement {
 
         div.appendChild(h1);
 
+        menuIcon.setAttribute('type', 'image/svg+xml');
+        menuIcon.setAttribute('data', '../img/menu.svg');
+
+        menuButton.id = 'menuButton';
+        menuButton.appendChild(menuIcon);
+
+        menuButton.addEventListener('click', e => {
+            e.preventDefault();
+            nav.classList.add('open');
+        });
+
+        div.appendChild(menuButton);
+
         // create nav
         const nav = document.createElement('nav');
         const links = [
@@ -33,12 +48,20 @@ class MainHeader extends HTMLElement {
             {href: "#newsletter", title: "Newsletter"},
             {href: "#history", title: "History"},
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar"},
-            {href: "#contact", title: "Contact Us"}
+            {href: "#contact", title: "Contact Us"},
+            {href: "#close", title: "Close"}
+
         ];
 
         for(const link of links) {
             nav.appendChild(Common.makeNavLink(link));
         }
+
+        const closeLink = nav.querySelector('a[href="#close"]');
+        closeLink.addEventListener('click', e => {
+            e.preventDefault();
+            nav.classList.remove('open');
+        });
 
         div.appendChild(nav);
         header.appendChild(div);
@@ -55,6 +78,11 @@ class MainHeader extends HTMLElement {
                 display:grid;
                 grid-template-columns:150px 1fr;
                 gap:0 20px;
+                position:relative;
+            }
+
+            #menuButton {
+                display:none;
             }
             
             nav {
@@ -73,6 +101,10 @@ class MainHeader extends HTMLElement {
             nav a:hover {
                 color:var(--yellow);
             }
+
+            nav a[href="#close"] {
+                display:none;
+            }
             
             header div img {
                 height:150px;
@@ -88,6 +120,61 @@ class MainHeader extends HTMLElement {
                 flex-direction:column;
                 justify-content:center;
                 font-size:3em;
+            }
+
+            @media (max-width: 576px) {
+                header div {
+                    grid-template-columns: 75px 1fr 40px;
+                    width:90vw;
+                }
+                
+                header div img {
+                    height:75px;
+                    transform:translateY(0);
+                }
+                
+                #menuButton {
+                    display:flex;
+                    background-color:transparent;
+                    border:0;
+                    flex-direction:column;
+                    justify-content:center;
+                }
+
+                #menuButton object {
+                    pointer-events:none;
+                }
+
+                nav {
+                    position:fixed;
+                    right:0;
+                    top:0;
+                    background-color:var(--purple);
+                    width:0;
+                    flex-direction:column;
+                    padding:0;
+                    height:100vh;
+                    overflow:hidden;
+                    transition: width 1s padding 1s;
+                }
+
+                nav a[href="#close"] {
+                    display:block;
+                }
+
+                nav.open {
+                    width:33vw;
+                    padding:6px 12px;
+                }
+
+                nav a {
+                    margin-bottom:12px;
+                }
+
+                h1 {
+                    font-size:1em;
+                    white-space:nowrap;
+                }
             }
         `;
 
@@ -147,6 +234,17 @@ class SubHeader extends HTMLElement {
                 background-color:#ccc;
                 border:2px dashed #000;
             }
+
+            @media (max-width: 576px) {
+                header {
+                    grid-template-columns: 75px 1fr 75px;
+                    width:90vw;
+                }
+
+                header img {
+                    height:75px;
+                }
+            }
         `;
 
         shadow.appendChild(style);
@@ -164,12 +262,14 @@ class MainFooter extends HTMLElement {
         const div = document.createElement('div');
         const copy = document.createElement('p');
         const fbLink = document.createElement('a');
-        const fbLogo = document.createElement('svg');
+        const fbLogo = document.createElement('object');
 
         copy.textContent = `\u00A9 ${new Date().getFullYear()} GWRRA Illinois Chapter Z`;
 
         fbLink.href = 'https://www.facebook.com/ILChapterZ';
-        fbLogo.className = 'fab fa-facebook-square';
+        
+        fbLogo.setAttribute('type', 'image/svg+xml');
+        fbLogo.setAttribute('data', '../img/facebook.svg');
 
         fbLink.appendChild(fbLogo);
         fbLink.setAttribute('target', '_blank');
@@ -196,13 +296,15 @@ class MainFooter extends HTMLElement {
                 color:var(--white);
             }
             
-            footer a {
-                color:var(--white);
-                font-size:2em;
+            footer object {
+                pointer-events:none;
+                height:2em;
             }
-            
-            footer a:hover {
-                color:var(--yellow);
+
+            @media (max-width: 576px) {
+                footer div {
+                    width:90vw;
+                }
             }
         `;
 
