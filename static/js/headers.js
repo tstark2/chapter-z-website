@@ -122,14 +122,14 @@ class MainHeader extends HTMLElement {
                 font-size:3em;
             }
 
-            @media (max-width: 576px) {
+            @media (max-width: 768px) {
                 header div {
-                    grid-template-columns: 75px 1fr 40px;
+                    grid-template-columns: 120px 1fr 40px;
                     width:90vw;
                 }
                 
                 header div img {
-                    height:75px;
+                    height:120px;
                     transform:translateY(0);
                 }
                 
@@ -163,7 +163,7 @@ class MainHeader extends HTMLElement {
                 }
 
                 nav.open {
-                    width:50vw;
+                    width:33vw;
                     padding:6px 12px;
                     border-left:5px solid var(--yellow);
                 }
@@ -174,8 +174,27 @@ class MainHeader extends HTMLElement {
                 }
 
                 h1 {
-                    font-size:1em;
+                    font-size:2em;
                     white-space:nowrap;
+                    text-align:center;
+                }
+            }
+
+            @media (max-width: 576px) {
+                header div {
+                    grid-template-columns: 75px 1fr 40px;
+                }
+
+                header div img {
+                    height:75px;
+                }
+
+                h1 {
+                    font-size:1em;
+                }
+
+                nav.open {
+                    width:50vw;
                 }
             }
         `;
@@ -237,10 +256,20 @@ class SubHeader extends HTMLElement {
                 border:2px dashed #000;
             }
 
+            @media (max-width: 768px) {
+                header {
+                    grid-template-columns: 120px 1fr 120px;
+                    width:90vw;
+                }
+
+                header img {
+                    height:120px;
+                }
+            }
+
             @media (max-width: 576px) {
                 header {
                     grid-template-columns: 75px 1fr 75px;
-                    width:90vw;
                 }
 
                 header img {
@@ -303,7 +332,7 @@ class MainFooter extends HTMLElement {
                 height:2em;
             }
 
-            @media (max-width: 576px) {
+            @media (max-width: 768px) {
                 footer div {
                     width:90vw;
                 }

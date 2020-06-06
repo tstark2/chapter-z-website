@@ -79,7 +79,7 @@ main aside .event a:hover {
     text-decoration:underline;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     main {
         grid-template-columns:1fr;
         width:90vw;
