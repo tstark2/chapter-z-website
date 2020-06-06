@@ -63,6 +63,9 @@ class MainHeader extends HTMLElement {
             nav.classList.remove('open');
         });
 
+        const calendarLink = nav.querySelector('a[href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago"]');
+        calendarLink.setAttribute('target', '_blank');
+
         div.appendChild(nav);
         header.appendChild(div);
 
