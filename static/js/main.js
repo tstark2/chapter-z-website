@@ -25,7 +25,6 @@ async function getCalendar() {
 }
 
 function makeEvent(event) {
-    console.log(event);
     const div = document.createElement('div');
     const dateTimeDiv = document.createElement('div');
     const title = document.createElement('p');
