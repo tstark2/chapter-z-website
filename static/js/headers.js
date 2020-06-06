@@ -49,7 +49,7 @@ class MainHeader extends HTMLElement {
             {href: "#history", title: "History"},
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar"},
             {href: "#contact", title: "Contact Us"},
-            {href: "#close", title: "Close"}
+            {href: "#close", title: "Close Menu"}
 
         ];
 
@@ -163,7 +163,7 @@ class MainHeader extends HTMLElement {
                 }
 
                 nav.open {
-                    width:33vw;
+                    width:50vw;
                     padding:6px 12px;
                 }
 
