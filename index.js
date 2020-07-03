@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const fetch = require('node-fetch');
 const google = 'https://www.googleapis.com';
-const fs = require('fs');
 const http = require('http');
 
 require('dotenv').config();
