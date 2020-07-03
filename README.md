@@ -17,3 +17,10 @@
 * Photos: Facebook
 * Calendar: Google
 * Newsletter: Google Docs
+
+## Needed before release
+
+* Calendar cleanup
+* Staff photos
+* Sponsor data
+* Contact page
