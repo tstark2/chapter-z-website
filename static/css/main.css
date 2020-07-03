@@ -32,6 +32,15 @@ main {
 
 main h2 {
     margin-top:0;
+    font-size:3em;
+}
+
+#gwrraText {
+    font-size:2em;
+}
+
+.subheading {
+    font-size:1.5em;
 }
 
 main aside {
@@ -39,6 +48,10 @@ main aside {
     padding:6px 12px;
     background-color:var(--purple);
     color:var(--white);
+}
+
+main aside h2 {
+    font-size:2em;
 }
 
 main aside .event {
@@ -79,8 +92,40 @@ main aside .event a:hover {
     text-decoration:underline;
 }
 
+#newsletters {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+}
+
+.newsletter {
+    text-decoration:none;
+}
+
+.newsletter:hover div {
+    color:var(--yellow);
+}
+
+.newsletter div {
+    border:5px solid var(--purple);
+    padding:6px 12px;
+    border-radius:5px;
+    font-size:1.5em;
+    color:var(--textColor);
+    text-align:center;
+}
+
+.newsletter div p {
+    margin:0;
+}
+
+.newsletter div i {
+    font-size:2em;
+}
+
+
 @media (max-width: 768px) {
-    main {
+    main, #newsletters {
         grid-template-columns:1fr;
         width:90vw;
     }

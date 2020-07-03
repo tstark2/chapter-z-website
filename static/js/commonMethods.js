@@ -2,6 +2,13 @@ export function makeNavLink(linkObj) {
     const link = document.createElement('a');
     link.href = linkObj.href;
     link.textContent = linkObj.title;
+
+    if(linkObj.options !== undefined) {
+       for(const option in linkObj.options) {
+           link.setAttribute(option, linkObj.options[option]);
+       }
+    }
+
     return link;
 }
 

@@ -54,8 +54,9 @@ async function getNewsletters() {
     const params = new URLSearchParams;
     params.append('key', process.env.GOOGLE_KEY);
     params.append('orderBy', 'createdTime desc');
-    params.append('q', "'1bsjJUNzVpVtM_MACU3Qq_jIxh0_wk8aQ' in parents");
-    params.append('pageSize', 3);
+    params.append('q', "'1bsjJUNzVpVtM_MACU3Qq_jIxh0_wk8aQ' in parents and mimeType = 'application/pdf'");
+    params.append('fields', 'files/name,files/webViewLink')
+    params.append('pageSize', 12);
     const response = await fetch(`${google}/drive/v3/files?${params.toString()}`);
     
 

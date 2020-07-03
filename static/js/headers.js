@@ -43,11 +43,12 @@ class MainHeader extends HTMLElement {
         const nav = document.createElement('nav');
         const links = [
             {href: "index.html", title: "Home"},
-            {href: "#officers", title: "Officers"},
-            {href: "#photos", title:"Photos"},
-            {href: "#newsletter", title: "Newsletter"},
-            {href: "#history", title: "History"},
-            {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar"},
+            {href: "about.html", title: "About Us"},
+            {href: "staff.html", title: "Staff"},
+            {href: "https://www.facebook.com/ILChapterZ/photos/", title:"Photos", options: {target: "_blank"}},
+            {href: "newsletter.html", title: "Newsletter"},
+            {href: "history.html", title: "History"},
+            {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar", options: {target: "_blank"}},
             {href: "#contact", title: "Contact Us"},
             {href: "#close", title: "Close Menu"}
 
@@ -62,9 +63,6 @@ class MainHeader extends HTMLElement {
             e.preventDefault();
             nav.classList.remove('open');
         });
-
-        const calendarLink = nav.querySelector('a[href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago"]');
-        calendarLink.setAttribute('target', '_blank');
 
         div.appendChild(nav);
         header.appendChild(div);
