@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }).catch(err => {
       console.log(err);
   });
-
 });
 
 async function getCalendar() {

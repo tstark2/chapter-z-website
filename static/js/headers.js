@@ -222,6 +222,7 @@ class SubHeader extends HTMLElement {
         gwrraLogo.appendChild(Common.makePicture('img/gwrraLogo'));
         header.appendChild(gwrraLogo);
 
+        sponsor.id = "sponsors"
         sponsorText.textContent = 'Sponsor Ad Here';
         sponsor.appendChild(sponsorText);
         header.appendChild(sponsor);
