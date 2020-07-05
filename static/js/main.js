@@ -75,7 +75,7 @@ function getDateAndTime(dateTime) {
     const date = new Date(dateTime);
     return {
         date: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`,
-        time: date.toLocaleTimeString('en-US')
+        time: date.toLocaleTimeString('en-US').replace(':00 ', ' ')
     }
 }
 

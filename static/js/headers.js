@@ -47,9 +47,8 @@ class MainHeader extends HTMLElement {
             {href: "staff.html", title: "Staff"},
             {href: "https://www.facebook.com/ILChapterZ/photos/", title:"Photos", options: {target: "_blank"}},
             {href: "newsletter.html", title: "Newsletters"},
-            {href: "history.html", title: "History"},
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar", options: {target: "_blank"}},
-            {href: "#contact", title: "Contact Us"},
+            {href: "mailto:il.chapter.z@gmail.com", title: "Contact Us"},
             {href: "#close", title: "Close Menu"}
 
         ];
@@ -292,11 +291,20 @@ class MainFooter extends HTMLElement {
         const style = document.createElement('style');
         const footer = document.createElement('footer');
         const div = document.createElement('div');
+        const iconDiv = document.createElement('div');
         const copy = document.createElement('p');
         const fbLink = document.createElement('a');
         const fbLogo = document.createElement('object');
+        const emailLink = document.createElement('a');
+        const emailLogo = document.createElement('object');
 
         copy.textContent = `\u00A9 ${new Date().getFullYear()} GWRRA Illinois Chapter Z`;
+
+        emailLink.href = 'mailto:il.chapter.z@gmail.com';
+        emailLogo.setAttribute('type', 'image/svg+xml');
+        emailLogo.setAttribute('data', '../img/email-outline.svg');
+
+        emailLink.appendChild(emailLogo);
 
         fbLink.href = 'https://www.facebook.com/ILChapterZ';
         
@@ -306,8 +314,12 @@ class MainFooter extends HTMLElement {
         fbLink.appendChild(fbLogo);
         fbLink.setAttribute('target', '_blank');
 
+        iconDiv.appendChild(emailLink);
+        iconDiv.appendChild(fbLink);
+        iconDiv.className = 'socialIcons';
+
         div.appendChild(copy);
-        div.appendChild(fbLink);
+        div.appendChild(iconDiv);
 
         footer.appendChild(div);
 
@@ -318,7 +330,7 @@ class MainFooter extends HTMLElement {
                 width:100vw;
             }
             
-            footer div {
+            footer > div {
                 width:75vw;
                 height:100%;
                 margin:0 auto;
@@ -331,6 +343,13 @@ class MainFooter extends HTMLElement {
             footer object {
                 pointer-events:none;
                 height:2em;
+            }
+
+            footer .socialIcons {
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                width:80px;
             }
 
             @media (max-width: 768px) {

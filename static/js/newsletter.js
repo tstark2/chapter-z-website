@@ -21,14 +21,14 @@ function makeNewsletterLink(newsletter) {
     const div = document.createElement('div');
     const p = document.createElement('p');
     const icon = document.createElement('i');
-    const month = newsletter.name.substring(0, 3);
-    const year = newsletter.name.substring(3, 7);
+    const month = newsletter.name.substring(5, 7);
+    const year = newsletter.name.substring(0,4);
 
     link.className = 'newsletter';
     link.href = newsletter.webViewLink;
     link.setAttribute('target', '_blank');
 
-    p.textContent = `${monthName(month)} ${year} Newsletter: `;
+    p.textContent = `${monthName(month)} ${year}`;
 
     icon.className = 'fas fa-file-pdf';
 
@@ -40,18 +40,18 @@ function makeNewsletterLink(newsletter) {
 
 function monthName(abbr) {
     const names = {
-        jan: "January",
-        feb: "February",
-        mar: "March",
-        apr: "April",
-        may: "May",
-        jun: "June",
-        jul: "July",
-        aug: "August",
-        sep: "September",
-        oct: "October",
-        nov: "November",
-        dec: "December"
+        "01": "January",
+        "02": "February",
+        "03": "March",
+        "04": "April",
+        "05": "May",
+        "06": "June",
+        "07": "July",
+        "08": "August",
+        "09": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
     }
 
     return names[abbr];

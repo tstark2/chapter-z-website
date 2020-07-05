@@ -7,6 +7,7 @@
     --textFont: 'Roboto';
     --textColor: #111;
     --white:#eee;
+    --scriptFont: 'Merienda One';
 }
 
 body {
@@ -41,6 +42,18 @@ main h2 {
 
 .subheading {
     font-size:1.5em;
+    color:var(--purple);
+    font-family:var(--scriptFont);
+}
+
+.purple {
+    color:var(--purple);
+}
+
+.covid {
+    color:#f00;
+    font-weight:bold;
+    font-size:1.05em;
 }
 
 main aside {
@@ -121,6 +134,12 @@ main aside .event a:hover {
 
 .newsletter div i {
     font-size:2em;
+    color:var(--purple);
+    margin-top:10px;
+}
+
+.newsletter:hover div i {
+    color:var(--yellow);
 }
 
 
