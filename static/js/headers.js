@@ -160,6 +160,7 @@ class MainHeader extends HTMLElement {
 
                 nav a[href="#close"] {
                     display:block;
+                    color:var(--yellow);
                 }
 
                 nav.open {
