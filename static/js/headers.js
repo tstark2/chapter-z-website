@@ -9,7 +9,12 @@ class MainHeader extends HTMLElement {
         const div = document.createElement('div');
         const menuButton = document.createElement('button');
         const menuIcon = document.createElement('object');
-        const style = document.createElement('style');
+        const styles = document.createElement('link');
+
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', "../css/mainHeader.css");
+
+        div.appendChild(styles);
 
         // create logo link
         const logoLink = document.createElement('a');
@@ -66,141 +71,6 @@ class MainHeader extends HTMLElement {
         div.appendChild(nav);
         header.appendChild(div);
 
-        // add styling
-        style.textContent = `
-            header {
-                background-color:var(--purple);
-            }
-            
-            header div {
-                width:75vw;
-                margin:0 auto;
-                display:grid;
-                grid-template-columns:150px 1fr;
-                gap:0 20px;
-                position:relative;
-            }
-
-            #menuButton {
-                display:none;
-            }
-            
-            nav {
-                grid-column-start: 2;
-                display:flex;
-                justify-content:flex-start;
-                align-items:baseline;
-            }
-            
-            nav a {
-                color:var(--white);
-                text-decoration:none;
-                margin-right:20px;
-            }
-            
-            nav a:hover {
-                color:var(--yellow);
-            }
-
-            nav a[href="#close"] {
-                display:none;
-            }
-            
-            header div img {
-                height:150px;
-                width:auto;
-                transform:translateY(10px);
-            }
-            
-            h1 {
-                font-family:var(--displayFont);
-                color:var(--white);
-                margin:0;
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-                font-size:3em;
-            }
-
-            @media (max-width: 768px) {
-                header div {
-                    grid-template-columns: 120px 1fr 40px;
-                    width:90vw;
-                }
-                
-                header div img {
-                    height:120px;
-                    transform:translateY(0);
-                }
-                
-                #menuButton {
-                    display:flex;
-                    background-color:transparent;
-                    border:0;
-                    flex-direction:column;
-                    justify-content:center;
-                }
-
-                #menuButton object {
-                    pointer-events:none;
-                }
-
-                nav {
-                    position:fixed;
-                    right:0;
-                    top:0;
-                    background-color:var(--purple);
-                    width:0;
-                    flex-direction:column;
-                    padding:0;
-                    height:100vh;
-                    overflow:hidden;
-                    transition: width 1s padding 1s;
-                }
-
-                nav a[href="#close"] {
-                    display:block;
-                    color:var(--yellow);
-                }
-
-                nav.open {
-                    width:33vw;
-                    padding:6px 12px;
-                    border-left:5px solid var(--yellow);
-                }
-
-                nav a {
-                    margin-bottom:20px;
-                    font-size:1.5em;
-                }
-
-                h1 {
-                    font-size:2em;
-                    white-space:nowrap;
-                    text-align:center;
-                }
-            }
-
-            @media (max-width: 576px) {
-                header div {
-                    grid-template-columns: 75px 1fr 40px;
-                }
-
-                header div img {
-                    height:75px;
-                }
-
-                h1 {
-                    font-size:1em;
-                }
-
-                nav.open {
-                    width:50vw;
-                }
-            }
-        `;
-
-        shadow.appendChild(style);
         shadow.appendChild(header);
     }
 }
@@ -210,12 +80,17 @@ class SubHeader extends HTMLElement {
         super();
         
         const shadow = this.attachShadow({mode: 'open'});
-        const style = document.createElement('style');
+        const styles = document.createElement('link');
         const header = document.createElement('header');
         const gwrraLogo = document.createElement('a');
         const sponsor = document.createElement('div');
-        const sponsorText = document.createElement('p');
         const ilDistrictLogo = document.createElement('a');
+
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', "../css/subHeader.css");
+
+        header.appendChild(styles);
+
 
         gwrraLogo.href = 'http://gwrra.org/';
         gwrraLogo.setAttribute('target', '_blank');
@@ -223,8 +98,7 @@ class SubHeader extends HTMLElement {
         header.appendChild(gwrraLogo);
 
         sponsor.id = "sponsors"
-        sponsorText.textContent = 'Sponsor Ad Here';
-        sponsor.appendChild(sponsorText);
+
         header.appendChild(sponsor);
         
 
@@ -233,54 +107,6 @@ class SubHeader extends HTMLElement {
         ilDistrictLogo.appendChild(Common.makePicture('img/illinoisSeal'));
         header.appendChild(ilDistrictLogo);
 
-        style.textContent = `
-            header {
-                width:75vw;
-                margin: 0 auto;
-                display:grid;
-                grid-template-columns:150px 1fr 150px;
-                gap:5px;
-                padding:6px 12px;
-            }
-            
-            header img {
-                height:150px;
-                width:auto;
-            }
-            
-            div {
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                width:100%;
-                height:100%;
-                background-color:#ccc;
-                border:2px dashed #000;
-            }
-
-            @media (max-width: 768px) {
-                header {
-                    grid-template-columns: 120px 1fr 120px;
-                    width:90vw;
-                }
-
-                header img {
-                    height:120px;
-                }
-            }
-
-            @media (max-width: 576px) {
-                header {
-                    grid-template-columns: 75px 1fr 75px;
-                }
-
-                header img {
-                    height:75px;
-                }
-            }
-        `;
-
-        shadow.appendChild(style);
         shadow.appendChild(header);
     }
 }
@@ -363,13 +189,8 @@ class MainFooter extends HTMLElement {
 
         shadow.appendChild(style);
         shadow.appendChild(footer);
-    }
-
-    
-    
+    }    
 }
-
-
 
 customElements.define('main-header', MainHeader);
 customElements.define('sub-header', SubHeader);

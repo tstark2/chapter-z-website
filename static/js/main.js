@@ -1,4 +1,4 @@
-// import * as Headers from './headers.js';
+import * as Sponsors from './sponsors.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   getCalendar().then(events => {
@@ -9,6 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }).catch(err => {
       console.log(err);
   });
+
+  const sponsors = Sponsors.default;
+  const sponsorSection = document.getElementsByTagName('sub-header')[0].shadowRoot.querySelector('#sponsors');
+  let adCount = getRandomInt(sponsors.length - 1);
+
+  const ad = makeSponsorAd(sponsors[adCount]);
+  sponsorSection.appendChild(ad);
+
+  setInterval(() => {
+      adCount++;
+      if(adCount >= sponsors.length) {
+        adCount = 0;
+      }
+      const adToReplace = sponsorSection.querySelector('a');
+      sponsorSection.replaceChild(makeSponsorAd(sponsors[adCount]), adToReplace);
+  }, 5000);
 });
 
 async function getCalendar() {
@@ -80,4 +96,84 @@ function getDateAndTime(dateTime) {
 
 function makeMapLink(location) {
     return encodeURI(`https://www.google.com/maps/search/?api=1&query=${location}`);
+}
+
+// determines the width of the sponsor section since we can't get it directly from the shadow dom.
+function getSponsorWidth() {
+    const windowWidth = window.innerWidth;
+    let multiplier;
+    let logoWidth;
+
+    switch(true) {
+        case windowWidth > 768:
+            multiplier = 0.75;
+            logoWidth = 300;
+            break;
+        case windowWidth <= 768 && windowWidth > 576: 
+            multiplier = 0.9;
+            logoWidth = 240;
+            break;
+        case windowWidth <= 576:
+            multiplier = 0.9;
+            logoWidth = -5;
+    }
+
+    return Math.round((windowWidth * multiplier) - (logoWidth + 5));
+}
+
+function makeSponsorAd(sponsor) {
+    const link = document.createElement('a');
+    const div = document.createElement('div');
+    const wrapper = document.createElement('div');
+    const name = document.createElement('p');
+    const city = document.createElement('p');
+
+    link.className = 'sponsorBanner';
+    link.href = sponsor.website;
+
+    if(sponsor.logo !== null) {
+        div.className = sponsor.logo.aspect;
+        const picture = document.createElement('picture');
+        const source = document.createElement('source');
+        const img = document.createElement('img');
+
+        if(sponsor.logo.extensions.includes('webp')) {
+            source.setAttribute('srcset', `img/sponsors/${sponsor.logo.name}.webp`);
+            source.setAttribute('type', 'image/webp');
+        }
+
+        if(sponsor.logo.extensions.includes('png')) {
+            img.setAttribute('src', `img/sponsors/${sponsor.logo.name}.png`);
+        }
+
+        if(sponsor.logo.extensions.includes('svg')) {
+            img.setAttribute('src', `img/sponsors/${sponsor.logo.name}.svg`);
+        }
+
+        img.setAttribute('alt', sponsor.name);
+
+        picture.appendChild(source);
+        picture.appendChild(img);
+        div.appendChild(picture);
+    }
+
+    wrapper.className = 'wrapper';
+
+    name.textContent = sponsor.name;
+    city.textContent = `${sponsor.address.city}, ${sponsor.address.state}`;
+    wrapper.appendChild(name);
+    wrapper.appendChild(city);
+
+
+    div.appendChild(wrapper);
+
+    link.appendChild(div);
+
+    return link;
+}
+
+function getRandomInt(max) {
+    const min = Math.ceil(0);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
