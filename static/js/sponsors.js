@@ -10,28 +10,7 @@ export default [
             "zip": "62056"
         },
         "category": "Motorcycle",
-        "logo": {
-            "name": "niehaus",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
-    },
-    {
-        "name": "Semper Fi Cycle",
-        "website": "https://semperficycle.com",
-        "phone": "309-925-5191",
-        "address": {
-            "street": "200 S Baer Rd",
-            "city": "Tremont",
-            "state": "IL",
-            "zip": "61568"
-        },
-        "category": "Motorcycle",
-        "logo": {
-            "name": "semper_fi",
-            "extensions": ["svg"],
-            "aspect" : "rectangle"
-        }
+        "logo": "niehaus"
     },
     {
         "name": "Germantown Grille",
@@ -44,11 +23,7 @@ export default [
             "zip": "61548"
         },
         "category": "Restaurant",
-        "logo": {
-            "name": "germantownGrille_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
+        "logo":"germantownGrille"
     },
     {
         "name": "Our Inn Place",
@@ -61,25 +36,21 @@ export default [
             "zip": "61554"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "ourInnPlace_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
+        "logo": "ourInnPlace"
     },
-    {
-        "name": "Town and Kountry Kitchen",
-        "website": "https://www.facebook.com/townandkountrykitchen/",
-        "phone": "309-383-2900",
-        "address": {
-            "street": "385 Germantown Rd",
-            "city": "Germantown Hills",
-            "state": "IL",
-            "zip": "61548"
-        },
-        "category":"Restaurant",
-        "logo": null
-    },
+    // {
+    //     "name": "Town and Kountry Kitchen",
+    //     "website": "https://www.facebook.com/townandkountrykitchen/",
+    //     "phone": "309-383-2900",
+    //     "address": {
+    //         "street": "385 Germantown Rd",
+    //         "city": "Germantown Hills",
+    //         "state": "IL",
+    //         "zip": "61548"
+    //     },
+    //     "category":"Restaurant",
+    //     "logo": "townAndKountryKitchen"
+    // },
     {
         "name": "Big Art's Yokel",
         "website": "https://www.bigartsyokel.com",
@@ -91,11 +62,7 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "bigArtsYokel_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
+        "logo": "bigArtsYokel"
     },
     {
         "name": "Kouri's Pub",
@@ -108,11 +75,20 @@ export default [
             "zip": "61548"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "kourisPub",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
+        "logo": "kourisPub"
+    },
+    {
+        "name": "Semper Fi Cycle",
+        "website": "https://semperficycle.com",
+        "phone": "309-925-5191",
+        "address": {
+            "street": "200 S Baer Rd",
+            "city": "Tremont",
+            "state": "IL",
+            "zip": "61568"
+        },
+        "category": "Motorcycle",
+        "logo": "semperFi"
     },
     {
         "name": "Perdue's Grill",
@@ -125,11 +101,7 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "purduesGrill_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
+        "logo": "perduesGrill",
     },
     {
         "name": "Jack's Cafe",
@@ -142,11 +114,7 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "jacksCafe",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
+        "logo": "jacksCafe"
     },
     {
         "name": "The Spotted Cow",
@@ -159,11 +127,7 @@ export default [
             "zip": "61614"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "theSpottedCow_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
+        "logo": "theSpottedCow"
     },
     {
         "name": "Mickie's Pizzeria",
@@ -176,29 +140,21 @@ export default [
             "zip": "61611"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "mickiesPizzeria",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
+        "logo": "mickiesPizzeria"
     },
-    {
-        "name": "Germantown Hills PC",
-        "website": "https://www.germantown-pc.com/",
-        "phone": "309-648-1553",
-        "address": {
-            "street": "509 Jubilee Lane",
-            "city": "Germantown Hills",
-            "state": "IL",
-            "zip": "61548"
-        },
-        "category":"Services",
-        "logo": {
-            "name": "germantownPC",
-            "extensions": ["png", "webp"],
-            "aspect" : "square"
-        }
-    },
+    // {
+    //     "name": "Germantown Hills PC",
+    //     "website": "https://www.germantown-pc.com/",
+    //     "phone": "309-648-1553",
+    //     "address": {
+    //         "street": "509 Jubilee Lane",
+    //         "city": "Germantown Hills",
+    //         "state": "IL",
+    //         "zip": "61548"
+    //     },
+    //     "category":"Services",
+    //     "logo": "germantownPC"
+    // },
     {
         "name": "Busy Corner",
         "website": "https://abusycorner.com/",
@@ -210,11 +166,7 @@ export default [
             "zip": "61742"
         },
         "category":"Restaurant",
-        "logo": {
-            "name": "busyCorner_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
+        "logo": "busyCorner"
     },
     {
         "name": "Better Banks Investment Strategists",
@@ -227,10 +179,6 @@ export default [
             "zip": "61615"
         },
         "category":"Services",
-        "logo": {
-            "name": "betterBanks_transparent",
-            "extensions": ["png", "webp"],
-            "aspect" : "rectangle"
-        }
+        "logo": "betterBanks"
     }
 ]

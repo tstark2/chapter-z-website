@@ -7,7 +7,8 @@
     --textFont: 'Roboto';
     --textColor: #111;
     --white:#eee;
-    --scriptFont: 'Merienda One';
+    --scriptFont:'Merienda One';
+    --adCount:1;
 }
 
 body {
@@ -49,35 +50,6 @@ main h2 {
 .purple {
     color:var(--purple);
 }
-
-/* #sponsorTest {
-    width:100%;
-    height:120px;
-    padding:6px 12px;
-    background-color:#000;
-}
-
-#sponsorTest img {
-    max-width:100%;
-    height:auto;
-    max-height:120px;
-}
-
-#sponsorTest.square {
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:5px;
-    text-align: center;
-    justify-content:center;
-}
-
-#sponsorTest .wrapper {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    height:100%;
-} */
 
 .covid {
     color:#f00;
@@ -172,7 +144,7 @@ main aside .event a:hover {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     main, #newsletters {
         grid-template-columns:1fr;
         width:90vw;

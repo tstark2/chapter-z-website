@@ -10,21 +10,46 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(err);
   });
 
+  const sponsorWidth = getSponsorWidth();
+  const adWidth = 280;
+  let adCount = Math.floor(sponsorWidth / adWidth);
   const sponsors = Sponsors.default;
   const sponsorSection = document.getElementsByTagName('sub-header')[0].shadowRoot.querySelector('#sponsors');
-  let adCount = getRandomInt(sponsors.length - 1);
+  let adStart = getRandomInt(sponsors.length - 1);
+  document.documentElement.style.setProperty('--adCount', adCount);
 
-  const ad = makeSponsorAd(sponsors[adCount]);
-  sponsorSection.appendChild(ad);
+  if(adCount < 2) {
+      sponsorSection.style.alignItems = 'center';
+      sponsorSection.style.justifyContent = 'center';
+  }
 
-  setInterval(() => {
-      adCount++;
-      if(adCount >= sponsors.length) {
-        adCount = 0;
+  if(sponsorWidth % adWidth < 30) {
+      adCount--;
+  }
+
+  if(adCount > sponsors.length) {
+      adCount = sponsors.length;
+  }
+
+  for(var i = 0; i < adCount; i++) {
+      sponsorSection.appendChild(makeSponsorAd(sponsors[i]));
+  }
+
+    setInterval(() => {
+      adStart += adCount;
+      if(adStart > sponsors.length -1) {
+          adStart = 0;
       }
-      const adToReplace = sponsorSection.querySelector('a');
-      sponsorSection.replaceChild(makeSponsorAd(sponsors[adCount]), adToReplace);
-  }, 5000);
+
+      for(var i = 0; i < adCount; i++) {
+          let newIndex = adStart + i;
+          if(newIndex > sponsors.length - 1) {
+              newIndex = 0;
+          }
+          const adToReplace = sponsorSection.querySelectorAll('a')[i];
+          sponsorSection.replaceChild(makeSponsorAd(sponsors[newIndex]), adToReplace);
+        }
+    }, 10000);
 });
 
 async function getCalendar() {
@@ -123,52 +148,22 @@ function getSponsorWidth() {
 
 function makeSponsorAd(sponsor) {
     const link = document.createElement('a');
-    const div = document.createElement('div');
-    const wrapper = document.createElement('div');
-    const name = document.createElement('p');
-    const city = document.createElement('p');
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    const img = document.createElement('img');
 
-    link.className = 'sponsorBanner';
     link.href = sponsor.website;
+    link.setAttribute('target', '_blank');
 
-    if(sponsor.logo !== null) {
-        div.className = sponsor.logo.aspect;
-        const picture = document.createElement('picture');
-        const source = document.createElement('source');
-        const img = document.createElement('img');
+    source.setAttribute('srcset', `../img/sponsors/${sponsor.logo}.webp`);
+    source.setAttribute('type', 'image/webp');
 
-        if(sponsor.logo.extensions.includes('webp')) {
-            source.setAttribute('srcset', `img/sponsors/${sponsor.logo.name}.webp`);
-            source.setAttribute('type', 'image/webp');
-        }
+    img.setAttribute('src', `../img/sponsors/${sponsor.logo}.png`);
+    img.setAttribute('alt', sponsor.name);
 
-        if(sponsor.logo.extensions.includes('png')) {
-            img.setAttribute('src', `img/sponsors/${sponsor.logo.name}.png`);
-        }
-
-        if(sponsor.logo.extensions.includes('svg')) {
-            img.setAttribute('src', `img/sponsors/${sponsor.logo.name}.svg`);
-        }
-
-        img.setAttribute('alt', sponsor.name);
-
-        picture.appendChild(source);
-        picture.appendChild(img);
-        div.appendChild(picture);
-    }
-
-    wrapper.className = 'wrapper';
-
-    name.textContent = sponsor.name;
-    city.textContent = `${sponsor.address.city}, ${sponsor.address.state}`;
-    wrapper.appendChild(name);
-    wrapper.appendChild(city);
-
-
-    div.appendChild(wrapper);
-
-    link.appendChild(div);
-
+    picture.appendChild(source);
+    picture.appendChild(img);
+    link.appendChild(picture);
     return link;
 }
 
