@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let adCount = Math.floor(sponsorWidth / adWidth);
   const sponsors = Sponsors.default;
   const sponsorSection = document.getElementsByTagName('sub-header')[0].shadowRoot.querySelector('#sponsors');
-  let adStart = getRandomInt(sponsors.length - 1);
+  let adStart;
   document.documentElement.style.setProperty('--adCount', adCount);
 
   if(adCount < 2) {
@@ -31,21 +31,36 @@ document.addEventListener("DOMContentLoaded", () => {
       adCount = sponsors.length;
   }
 
+  let sponsorIds = [];
+
+  for(const index in sponsors) {
+      sponsorIds.push(index);
+  }
+
+  // shuffle the array of ad id's
+  for(let i = sponsorIds.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i);
+      const temp = sponsorIds[i];
+      sponsorIds[i] = sponsorIds[j];
+      sponsorIds[j] = temp;
+  }
+
   for(var i = 0; i < adCount; i++) {
-      sponsorSection.appendChild(makeSponsorAd(sponsors[i]));
+      adStart = i;
+      sponsorSection.appendChild(makeSponsorAd(sponsors[sponsorIds[i]]));
   }
 
     setInterval(() => {
-      adStart += adCount;
-      if(adStart > sponsors.length -1) {
-          adStart = 0;
-      }
-
       for(var i = 0; i < adCount; i++) {
-          let newIndex = adStart + i;
-          if(newIndex > sponsors.length - 1) {
-              newIndex = 0;
-          }
+            adStart++;
+            if(adStart > sponsors.length -1) {
+                adStart = 0;
+            }
+            let newIndex = sponsorIds[adStart];
+            if(newIndex > sponsors.length - 1) {
+                newIndex = 0;
+            }
+
           const adToReplace = sponsorSection.querySelectorAll('a')[i];
           sponsorSection.replaceChild(makeSponsorAd(sponsors[newIndex]), adToReplace);
         }
@@ -151,14 +166,26 @@ function makeSponsorAd(sponsor) {
     const picture = document.createElement('picture');
     const source = document.createElement('source');
     const img = document.createElement('img');
+    let pngString = '';
+    let webpString = '';
 
     link.href = sponsor.website;
     link.setAttribute('target', '_blank');
 
-    source.setAttribute('srcset', `../img/sponsors/${sponsor.logo}.webp`);
+    if(sponsor.resolutions.length > 1) {
+        for(const resolution of sponsor.resolutions) {
+            
+            pngString += `../img/sponsors/${sponsor.logo}@${resolution}x.png ${resolution}x, `;
+            webpString += `../img/sponsors/${sponsor.logo}@${resolution}x.webp ${resolution}x, `
+        }
+    } else {
+        pngString = `../img/sponsors/${sponsor.logo}.png`;
+        webpString = `../img/sponsors/${sponsor.logo}.webp`;
+    }
+    source.setAttribute('srcset', webpString);
     source.setAttribute('type', 'image/webp');
 
-    img.setAttribute('src', `../img/sponsors/${sponsor.logo}.png`);
+    img.setAttribute('src', pngString);
     img.setAttribute('alt', sponsor.name);
 
     picture.appendChild(source);

@@ -10,7 +10,8 @@ export default [
             "zip": "62056"
         },
         "category": "Motorcycle",
-        "logo": "niehaus"
+        "logo": "niehaus",
+        "resolutions": [1]
     },
     {
         "name": "Germantown Grille",
@@ -23,7 +24,8 @@ export default [
             "zip": "61548"
         },
         "category": "Restaurant",
-        "logo":"germantownGrille"
+        "logo":"AD_Germantown_Grille",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Our Inn Place",
@@ -36,7 +38,8 @@ export default [
             "zip": "61554"
         },
         "category":"Restaurant",
-        "logo": "ourInnPlace"
+        "logo": "ourInnPlace",
+        "resolutions": [1]
     },
     // {
     //     "name": "Town and Kountry Kitchen",
@@ -62,7 +65,8 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": "bigArtsYokel"
+        "logo": "AD_Big_Arts_Yokel",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Kouri's Pub",
@@ -75,7 +79,8 @@ export default [
             "zip": "61548"
         },
         "category":"Restaurant",
-        "logo": "kourisPub"
+        "logo": "kourisPub",
+        "resolutions": [1]
     },
     {
         "name": "Semper Fi Cycle",
@@ -88,7 +93,8 @@ export default [
             "zip": "61568"
         },
         "category": "Motorcycle",
-        "logo": "semperFi"
+        "logo": "semperFi",
+        "resolutions": [1]
     },
     {
         "name": "Perdue's Grill",
@@ -102,6 +108,7 @@ export default [
         },
         "category":"Restaurant",
         "logo": "perduesGrill",
+        "resolutions": [1]
     },
     {
         "name": "Jack's Cafe",
@@ -114,7 +121,8 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": "jacksCafe"
+        "logo": "jacksCafe",
+        "resolutions": [1]
     },
     {
         "name": "The Spotted Cow",
@@ -127,7 +135,8 @@ export default [
             "zip": "61614"
         },
         "category":"Restaurant",
-        "logo": "theSpottedCow"
+        "logo": "theSpottedCow",
+        "resolutions": [1]
     },
     {
         "name": "Mickie's Pizzeria",
@@ -140,7 +149,8 @@ export default [
             "zip": "61611"
         },
         "category":"Restaurant",
-        "logo": "mickiesPizzeria"
+        "logo": "mickiesPizzeria",
+        "resolutions": [1]
     },
     // {
     //     "name": "Germantown Hills PC",
@@ -166,7 +176,8 @@ export default [
             "zip": "61742"
         },
         "category":"Restaurant",
-        "logo": "busyCorner"
+        "logo": "AD_Busy_Corner",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Better Banks Investment Strategists",
@@ -179,6 +190,7 @@ export default [
             "zip": "61615"
         },
         "category":"Services",
-        "logo": "betterBanks"
+        "logo": "AD_Better_Banks_Investments",
+        "resolutions": [1,2,3]
     }
 ]
