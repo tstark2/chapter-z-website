@@ -168,14 +168,17 @@ function makeSponsorAd(sponsor) {
     const img = document.createElement('img');
     let pngString = '';
     let webpString = '';
+    let oneXModifier = '';
 
     link.href = sponsor.website;
     link.setAttribute('target', '_blank');
 
     if(sponsor.resolutions.length > 1) {
         for(const resolution of sponsor.resolutions) {
-            
-            pngString += `../img/sponsors/${sponsor.logo}@${resolution}x.png ${resolution}x, `;
+            oneXModifier = '@1x';
+            if(resolution > 1) {
+                pngString += `../img/sponsors/${sponsor.logo}@${resolution}x.png ${resolution}x, `;
+            }
             webpString += `../img/sponsors/${sponsor.logo}@${resolution}x.webp ${resolution}x, `
         }
     } else {
@@ -185,8 +188,9 @@ function makeSponsorAd(sponsor) {
     source.setAttribute('srcset', webpString);
     source.setAttribute('type', 'image/webp');
 
-    img.setAttribute('src', pngString);
+    img.setAttribute('src', `../img/sponsors/${sponsor.logo}${oneXModifier}.png`);
     img.setAttribute('alt', sponsor.name);
+    img.setAttribute('srcset', pngString);
 
     picture.appendChild(source);
     picture.appendChild(img);
