@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
               first.href = newSponsor.website;
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
-              next.classList.add('hide');
               next.style.zIndex = -1;
+              next.classList.add('hide');
               next.classList.remove('down');
 
               setTimeout(() => {
