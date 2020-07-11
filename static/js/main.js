@@ -1,4 +1,5 @@
 import * as Sponsors from './sponsors.js';
+import * as Common from './commonMethods.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   getCalendar().then(events => {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sponsors = Sponsors.default;
   const sponsorSection = document.getElementsByTagName('sub-header')[0].shadowRoot.querySelector('#sponsors');
   let adStart;
+  const sponsorLength = sponsors.length - 1;
   document.documentElement.style.setProperty('--adCount', adCount);
 
   if(adCount < 2) {
@@ -45,26 +47,117 @@ document.addEventListener("DOMContentLoaded", () => {
       sponsorIds[j] = temp;
   }
 
-  for(var i = 0; i < adCount; i++) {
-      adStart = i;
-      sponsorSection.appendChild(makeSponsorAd(sponsors[sponsorIds[i]]));
+  for(let i = 0; i < adCount; i++) {
+    adStart = i;
+    const ad = document.createElement('sponsor-slider');
+    const first = ad.shadowRoot.querySelector('.first');
+    const next = ad.shadowRoot.querySelector('.next');
+    const firstSponsor = sponsors[sponsorIds[i]];
+    const nextSponsor = sponsors[sponsorIds[i + adCount]];
+
+    first.href = firstSponsor.website;
+    first.replaceChild(Common.makeSponsorPicture(firstSponsor), first.querySelector('picture'));
+
+    next.href = nextSponsor.website;
+    next.replaceChild(Common.makeSponsorPicture(nextSponsor), next.querySelector('picture'));
+
+    sponsorSection.appendChild(ad);
   }
 
-    setInterval(() => {
-      for(var i = 0; i < adCount; i++) {
-            adStart++;
-            if(adStart > sponsors.length -1) {
-                adStart = 0;
-            }
-            let newIndex = sponsorIds[adStart];
-            if(newIndex > sponsors.length - 1) {
-                newIndex = 0;
-            }
+  setInterval(() => {
+      for(let i = 0; i < adCount; i++) {
+          
+          adStart++;
 
-          const adToReplace = sponsorSection.querySelectorAll('a')[i];
-          sponsorSection.replaceChild(makeSponsorAd(sponsors[newIndex]), adToReplace);
-        }
-    }, 10000);
+          if(adStart > sponsorLength) {
+              adStart = 0;
+          }
+
+          let newIndex = sponsorIds[adStart];
+          if(newIndex > sponsorLength) {
+              newIndex = 0;
+          }
+
+          const next = sponsorSection.getElementsByTagName('sponsor-slider')[i].shadowRoot.querySelector('.next');
+          const first = sponsorSection.getElementsByTagName('sponsor-slider')[i].shadowRoot.querySelector('.first');
+          const newSponsor = sponsors[newIndex];
+          const newPicture = Common.makeSponsorPicture(newSponsor);
+          const nextPicture = next.querySelector('picture');
+          const firstPicture = first.querySelector('picture');
+
+          next.href = newSponsor.website;
+          next.replaceChild(newPicture, nextPicture);
+          next.classList.add('down');
+
+          setTimeout(() => {
+              first.href = newSponsor.website;
+              first.replaceChild(newPicture.cloneNode(true), firstPicture);
+              next.classList.add('hide');
+              next.classList.remove('down');
+
+              setTimeout(() => {
+                  next.classList.remove('hide');
+              }, 1500);
+          }, 1500);
+      }
+  }, 10000);
+
+    // setInterval(() => {
+    //     for(var i = 0; i < adCount; i++) {
+    //         adStart++;
+    //         if(adStart > sponsors.length -1) {
+    //             adStart = 0;
+    //         }
+    //         let newIndex = sponsorIds[adStart];
+    //         if(newIndex > sponsors.length - 1) {
+    //             newIndex = 0;
+    //         }
+
+    //         const next = sponsorSection.getElementsByClassName('next')[i];
+    //         const first = sponsorSection.getElementsByClassName('first')[i];
+    //         const newSponsor = sponsors[newIndex];
+    //         const newPicture = Common.makeSponsorPicture(newSponsor);
+    //         const nextPicture = next.getElementsByTagName('picture')[0];
+    //         const firstPicture = first.getElementsByTagName('picture')[0];
+
+    //         next.href = newSponsor.website;
+    //         next.replaceChild(newPicture, nextPicture);
+    //         next.classList.add('down');
+
+    //         setTimeout(() => {
+    //             first.href = newSponsor.website;
+    //             first.replaceChild(newPicture.cloneNode(true), firstPicture);
+    //             next.classList.add('hide');
+    //             next.classList.remove('down');
+
+    //             setTimeout(() => {
+    //                 next.classList.remove('hide');
+    //             }, 1500);
+    //         }, 1500);
+
+    //         // const next = sponsorSection.getElementsByClassName('next')[i];
+    //         // const newSponsor = sponsors[newIndex];
+    //         // const oldAd = sponsorSection.getElementsByClassName('first')[i];
+    //         // const newPicture = Common.makeSponsorPicture(newSponsor);
+
+    //         // next.href = newSponsor.website;
+    //         // next.replaceChild(newPicture, next.querySelector('picture'));
+    //         // next.classList.add('down');
+
+    //         // setTimeout(() => {
+    //         //     oldAd.href = newSponsor.website;
+    //         //     oldAd.replaceChild(newPicture, oldAd.querySelector('picture'));
+    //         //     // const newClone = newPicture.cloneNode();
+    //         //     // oldAd.querySelector('picture').replaceWith(newClone);
+    //         //     next.classList.add('hide');
+    //         //     next.classList.remove('down');
+
+    //         //     setTimeout(() => {
+    //         //         next.classList.remove('hide');
+    //         //     }, 1000);
+    //         // }, 1500);
+    //     }
+    // }, 10000);
 });
 
 async function getCalendar() {
@@ -97,7 +190,7 @@ function makeEvent(event) {
     if(event.location !== undefined) {
         const mapPin = document.createElement('i');
         mapPin.className = 'fas fa-map-marker-alt';
-        location.setAttribute('href', makeMapLink(event.location));
+        location.setAttribute('href', Common.makeMapLink(event.location));
         location.setAttribute('target', '_blank');
         location.appendChild(mapPin);
         location.appendChild(document.createTextNode(event.location));
@@ -134,10 +227,6 @@ function getDateAndTime(dateTime) {
     }
 }
 
-function makeMapLink(location) {
-    return encodeURI(`https://www.google.com/maps/search/?api=1&query=${location}`);
-}
-
 // determines the width of the sponsor section since we can't get it directly from the shadow dom.
 function getSponsorWidth() {
     const windowWidth = window.innerWidth;
@@ -159,47 +248,4 @@ function getSponsorWidth() {
     }
 
     return Math.round((windowWidth * multiplier) - (logoWidth + 5));
-}
-
-function makeSponsorAd(sponsor) {
-    const link = document.createElement('a');
-    const picture = document.createElement('picture');
-    const source = document.createElement('source');
-    const img = document.createElement('img');
-    let pngString = '';
-    let webpString = '';
-    let oneXModifier = '';
-
-    link.href = sponsor.website;
-    link.setAttribute('target', '_blank');
-
-    if(sponsor.resolutions.length > 1) {
-        for(const resolution of sponsor.resolutions) {
-            oneXModifier = '@1x';
-            if(resolution > 1) {
-                pngString += `../img/sponsors/${sponsor.logo}@${resolution}x.png ${resolution}x, `;
-            }
-            webpString += `../img/sponsors/${sponsor.logo}@${resolution}x.webp ${resolution}x, `
-        }
-    } else {
-        pngString = `../img/sponsors/${sponsor.logo}.png`;
-        webpString = `../img/sponsors/${sponsor.logo}.webp`;
-    }
-    source.setAttribute('srcset', webpString);
-    source.setAttribute('type', 'image/webp');
-
-    img.setAttribute('src', `../img/sponsors/${sponsor.logo}${oneXModifier}.png`);
-    img.setAttribute('alt', sponsor.name);
-    img.setAttribute('srcset', pngString);
-
-    picture.appendChild(source);
-    picture.appendChild(img);
-    link.appendChild(picture);
-    return link;
-}
-
-function getRandomInt(max) {
-    const min = Math.ceil(0);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

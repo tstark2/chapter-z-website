@@ -144,7 +144,7 @@ main aside .event a:hover {
 }
 
 
-@media (max-width: 800px) {
+@media (max-device-width: 800px) {
     main, #newsletters {
         grid-template-columns:1fr;
         width:90vw;

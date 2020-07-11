@@ -180,7 +180,7 @@ export default [
         "resolutions": [1,2,3]
     },
     {
-        "name": "Better Banks Investment Strategists",
+        "name": "Investment Strategists at Better Banks",
         "website": "https://www.betterbanks.com/investment-strategists-better-banks",
         "phone": "309-685-9595",
         "address": {

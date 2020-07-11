@@ -1,0 +1,38 @@
+#sponsorGrid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+}
+
+@media (max-device-width: 800px) {
+    #sponsorGrid {
+        grid-template-columns:1fr;
+    }
+}
+
+.sponsor {
+    border:1px solid #000;
+    border-radius:5px;
+    padding:6px 12px;
+    text-align:center;
+}
+
+.name {
+    font-size:1.5em;
+}
+
+.address p {
+    margin:0;
+}
+
+.sponsor a {
+    display:block;
+    margin:16px 0;
+    color:var(--purple);
+    text-decoration:none;
+}
+
+.sponsor a:hover {
+    color:var(--yellow);
+    text-decoration:underline;
+}

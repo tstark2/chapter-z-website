@@ -53,6 +53,7 @@ class MainHeader extends HTMLElement {
             {href: "https://www.facebook.com/ILChapterZ/photos/", title:"Photos", options: {target: "_blank"}},
             {href: "newsletter.html", title: "Newsletters"},
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar", options: {target: "_blank"}},
+            {href: "sponsors.html", title: "Sponsors"},
             {href: "mailto:il.chapter.z@gmail.com", title: "Contact Us"},
             {href: "#close", title: "Close Menu"}
 
@@ -116,7 +117,7 @@ class MainFooter extends HTMLElement {
         super();
 
         const shadow = this.attachShadow({mode: "open"});
-        const style = document.createElement('style');
+        const styles = document.createElement('link');
         const footer = document.createElement('footer');
         const div = document.createElement('div');
         const iconDiv = document.createElement('div');
@@ -125,6 +126,9 @@ class MainFooter extends HTMLElement {
         const fbLogo = document.createElement('object');
         const emailLink = document.createElement('a');
         const emailLogo = document.createElement('object');
+
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', "../css/mainFooter.css");
 
         copy.textContent = `\u00A9 ${new Date().getFullYear()} GWRRA Illinois Chapter Z`;
 
@@ -151,47 +155,40 @@ class MainFooter extends HTMLElement {
 
         footer.appendChild(div);
 
-        style.textContent = `
-            footer {
-                background-color:var(--purple);
-                height:50px;
-                width:100vw;
-            }
-            
-            footer > div {
-                width:75vw;
-                height:100%;
-                margin:0 auto;
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                color:var(--white);
-            }
-            
-            footer object {
-                pointer-events:none;
-                height:2em;
-            }
-
-            footer .socialIcons {
-                display:flex;
-                align-items:center;
-                justify-content:space-between;
-                width:80px;
-            }
-
-            @media (max-width: 768px) {
-                footer div {
-                    width:90vw;
-                }
-            }
-        `;
-
-        shadow.appendChild(style);
+        shadow.appendChild(styles);
         shadow.appendChild(footer);
     }    
+}
+
+class SponsorSlider extends HTMLElement {
+    constructor() {
+        super();
+
+        const shadow = this.attachShadow({mode: "open"});
+        const styles = document.createElement('link');
+        const div = document.createElement('div');
+        const next = document.createElement('a');
+        const first = document.createElement('a');
+        const firstPicture = document.createElement('picture');
+        const nextPicture = document.createElement('picture');
+
+        styles.setAttribute('rel', 'stylesheet');
+        styles.setAttribute('href', "../css/sponsorSlider.css");
+
+        next.appendChild(nextPicture);
+        next.className = 'next';
+
+        first.appendChild(firstPicture);
+        first.className = 'first';
+
+        div.appendChild(styles);
+        div.appendChild(next);
+        div.appendChild(first);
+        shadow.appendChild(div);
+    }
 }
 
 customElements.define('main-header', MainHeader);
 customElements.define('sub-header', SubHeader);
 customElements.define('main-footer', MainFooter);
+customElements.define('sponsor-slider', SponsorSlider);
