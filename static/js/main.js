@@ -93,10 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
               first.href = newSponsor.website;
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
               next.classList.add('hide');
+              next.style.zIndex = -1;
               next.classList.remove('down');
 
               setTimeout(() => {
                   next.classList.remove('hide');
+                  next.removeAttribute('style');
               }, 1500);
           }, 1500);
       }
