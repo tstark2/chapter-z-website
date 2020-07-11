@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }, 1500);
           }, 1500);
       }
-  }, 10000);
+  }, 15000);
 
     // setInterval(() => {
     //     for(var i = 0; i < adCount; i++) {
