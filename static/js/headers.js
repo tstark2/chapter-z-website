@@ -121,7 +121,10 @@ class MainFooter extends HTMLElement {
         const footer = document.createElement('footer');
         const div = document.createElement('div');
         const iconDiv = document.createElement('div');
+        const textDiv = document.createElement('div');
         const copy = document.createElement('p');
+        const dev = document.createElement('p');
+        const devLink = document.createElement('a');
         const fbLink = document.createElement('a');
         const fbLogo = document.createElement('object');
         const emailLink = document.createElement('a');
@@ -131,6 +134,14 @@ class MainFooter extends HTMLElement {
         styles.setAttribute('href', "../css/mainFooter.css");
 
         copy.textContent = `\u00A9 ${new Date().getFullYear()} GWRRA Illinois Chapter Z`;
+        dev.textContent = 'Web Development by ';
+        devLink.href = 'https://tstark2.us';
+        devLink.textContent = "Todd Stark II";
+
+        textDiv.appendChild(copy);
+        dev.appendChild(devLink);
+        textDiv.appendChild(dev);
+        textDiv.className = 'footerText';
 
         emailLink.href = 'mailto:il.chapter.z@gmail.com';
         emailLogo.setAttribute('type', 'image/svg+xml');
@@ -150,7 +161,7 @@ class MainFooter extends HTMLElement {
         iconDiv.appendChild(fbLink);
         iconDiv.className = 'socialIcons';
 
-        div.appendChild(copy);
+        div.appendChild(textDiv);
         div.appendChild(iconDiv);
 
         footer.appendChild(div);
