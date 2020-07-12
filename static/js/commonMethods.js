@@ -28,6 +28,22 @@ export function makePicture(path) {
     return pic;
 }
 
+export function makeResponsivePicture(name) {
+    const pic = document.createElement('picture');
+    const source = document.createElement('source');
+    const img = document.createElement('img');
+    let pngString = `../img/${name}@2x.png 2x, ../img/${name}@3x.png 3x`;
+    let webpString = `../img/${name}@1x.webp 1x, ../img/${name}@2x.webp 2x, ../img/${name}@3x.webp 3x`;
+    
+    source.setAttribute('srcset', webpString);
+    img.setAttribute('src', `../img/${name}@1x.png`);
+    img.setAttribute('srcset', pngString);
+
+    pic.appendChild(source);
+    pic.appendChild(img);
+    return pic;
+}
+
 export function makeSponsorPicture(sponsor) {
     const picture = document.createElement('picture');
     const source = document.createElement('source');

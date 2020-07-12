@@ -95,7 +95,7 @@ class SubHeader extends HTMLElement {
 
         gwrraLogo.href = 'http://gwrra.org/';
         gwrraLogo.setAttribute('target', '_blank');
-        gwrraLogo.appendChild(Common.makePicture('img/gwrraLogo'));
+        gwrraLogo.appendChild(Common.makeResponsivePicture('gwrraSeal'));
         header.appendChild(gwrraLogo);
 
         sponsor.id = "sponsors"
