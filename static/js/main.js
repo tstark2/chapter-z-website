@@ -92,74 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
               first.href = newSponsor.website;
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
-            //   next.style.zIndex = -1;
               next.classList.add('hide');
               next.classList.remove('down');
 
               setTimeout(() => {
                   next.classList.remove('hide');
-                //   next.removeAttribute('style');
-              }, 2000);
+              }, 1500);
           }, 1500);
       }
   }, 15000);
-
-    // setInterval(() => {
-    //     for(var i = 0; i < adCount; i++) {
-    //         adStart++;
-    //         if(adStart > sponsors.length -1) {
-    //             adStart = 0;
-    //         }
-    //         let newIndex = sponsorIds[adStart];
-    //         if(newIndex > sponsors.length - 1) {
-    //             newIndex = 0;
-    //         }
-
-    //         const next = sponsorSection.getElementsByClassName('next')[i];
-    //         const first = sponsorSection.getElementsByClassName('first')[i];
-    //         const newSponsor = sponsors[newIndex];
-    //         const newPicture = Common.makeSponsorPicture(newSponsor);
-    //         const nextPicture = next.getElementsByTagName('picture')[0];
-    //         const firstPicture = first.getElementsByTagName('picture')[0];
-
-    //         next.href = newSponsor.website;
-    //         next.replaceChild(newPicture, nextPicture);
-    //         next.classList.add('down');
-
-    //         setTimeout(() => {
-    //             first.href = newSponsor.website;
-    //             first.replaceChild(newPicture.cloneNode(true), firstPicture);
-    //             next.classList.add('hide');
-    //             next.classList.remove('down');
-
-    //             setTimeout(() => {
-    //                 next.classList.remove('hide');
-    //             }, 1500);
-    //         }, 1500);
-
-    //         // const next = sponsorSection.getElementsByClassName('next')[i];
-    //         // const newSponsor = sponsors[newIndex];
-    //         // const oldAd = sponsorSection.getElementsByClassName('first')[i];
-    //         // const newPicture = Common.makeSponsorPicture(newSponsor);
-
-    //         // next.href = newSponsor.website;
-    //         // next.replaceChild(newPicture, next.querySelector('picture'));
-    //         // next.classList.add('down');
-
-    //         // setTimeout(() => {
-    //         //     oldAd.href = newSponsor.website;
-    //         //     oldAd.replaceChild(newPicture, oldAd.querySelector('picture'));
-    //         //     // const newClone = newPicture.cloneNode();
-    //         //     // oldAd.querySelector('picture').replaceWith(newClone);
-    //         //     next.classList.add('hide');
-    //         //     next.classList.remove('down');
-
-    //         //     setTimeout(() => {
-    //         //         next.classList.remove('hide');
-    //         //     }, 1000);
-    //         // }, 1500);
-    //     }
-    // }, 10000);
 });
 
 async function getCalendar() {
