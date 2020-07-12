@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
               next.classList.add('hide');
               next.classList.remove('down');
 
-              setTimeout(() => {
-                  next.classList.remove('hide');
-              }, 1500);
+            //   setTimeout(() => {
+            //       next.classList.remove('hide');
+            //   }, 1500);
           }, 1500);
       }
   }, 15000);
