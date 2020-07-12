@@ -93,11 +93,15 @@ document.addEventListener("DOMContentLoaded", () => {
               first.href = newSponsor.website;
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
               next.classList.add('hide');
-              next.classList.remove('down');
 
-            //   setTimeout(() => {
-            //       next.classList.remove('hide');
-            //   }, 1500);
+              setTimeout(() => {
+                  next.classList.remove('down');
+              }, 1000);
+            //   next.classList.remove('down');
+
+              setTimeout(() => {
+                  next.classList.remove('hide');
+              }, 2000);
           }, 1500);
       }
   }, 5000);
