@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
               setTimeout(() => {
                   next.classList.remove('hide');
                 //   next.removeAttribute('style');
-              }, 1500);
+              }, 2000);
           }, 1500);
       }
   }, 15000);
