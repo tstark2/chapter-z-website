@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   next.classList.remove('down');
               }, 1000);
 
-              // wait two seconds, then move it back to the front;
+              // wait two seconds, then move .next back to the front;
               setTimeout(() => {
                   next.classList.remove('hide');
               }, 2000);
