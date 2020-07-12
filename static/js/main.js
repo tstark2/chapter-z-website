@@ -92,13 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
               first.href = newSponsor.website;
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
-              next.style.zIndex = -1;
+            //   next.style.zIndex = -1;
               next.classList.add('hide');
               next.classList.remove('down');
 
               setTimeout(() => {
                   next.classList.remove('hide');
-                  next.removeAttribute('style');
+                //   next.removeAttribute('style');
               }, 1500);
           }, 1500);
       }
