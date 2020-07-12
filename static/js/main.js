@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //   }, 1500);
           }, 1500);
       }
-  }, 15000);
+  }, 5000);
 });
 
 async function getCalendar() {
