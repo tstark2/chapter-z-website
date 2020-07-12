@@ -94,17 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
               next.classList.add('hide');
 
+              // wait a second, then slide .next back up
               setTimeout(() => {
                   next.classList.remove('down');
               }, 1000);
-            //   next.classList.remove('down');
 
+              // wait two seconds, then move it back to the front;
               setTimeout(() => {
                   next.classList.remove('hide');
               }, 2000);
           }, 1500);
       }
-  }, 5000);
+  }, 15000);
 });
 
 async function getCalendar() {
