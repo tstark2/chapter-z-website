@@ -4,6 +4,12 @@
     gap:10px;
 }
 
+@media (max-device-width: 800px) {
+    #staffContainer {
+        grid-template-columns:1fr;
+    }
+}
+
 .staff {
     border:1px solid var(--textColor);
     border-radius:5px;
