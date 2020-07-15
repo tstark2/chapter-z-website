@@ -60,8 +60,9 @@ main h2 {
 main aside {
     border-radius:5px;
     padding:6px 12px;
-    background-color:var(--purple);
-    color:var(--white);
+    background-color:var(--white);
+    color:var(--purple);
+    /* border:2px solid var(--purple); */
 }
 
 main aside h2 {
@@ -69,10 +70,11 @@ main aside h2 {
 }
 
 main aside .event {
-    border:2px solid var(--yellow);
+    /* border:2px solid var(--yellow); */
     border-radius:5px;
     padding:6px 12px;
-    margin-bottom:5px;
+    margin-bottom:10px;
+    background-color:var(--purple);
 }
 
 main aside .event .title {
