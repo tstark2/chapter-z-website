@@ -29,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
       adCount--;
   }
 
+  if(adCount < 1) {
+    adCount = 1;
+  }
+
+
   if(adCount > sponsors.length) {
       adCount = sponsors.length;
   }
