@@ -4,7 +4,7 @@
     gap:10px;
 }
 
-@media (max-device-width: 800px) {
+@media (max-device-width: 500px) {
     #sponsorGrid {
         grid-template-columns:1fr;
     }
