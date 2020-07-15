@@ -11,7 +11,6 @@
     <link rel="icon" href="img/favicon-96.png" sizes="96x96">
     <link rel="icon" href="img/favicon-128.png" sizes="128x128">
     <link rel="icon" href="img/favicon-192.png" sizes="192x192">
-    <link rel="icon" href="img/favicon-228.png" sizes="228x228">
 
     <!-- Android -->
     <link rel="shortcut icon" sizes="196x196" href=“img/favicon-196.png">
@@ -21,6 +20,7 @@
     <link rel="apple-touch-icon" href="img/favicon-152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="img/favicon-180.png" sizes="180x180">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/staff.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -32,17 +32,28 @@
     <sub-header></sub-header>
     <main>
         <div>
-            <h2>Staff</h2>
-            <ul>
-                <li><strong>Chapter Director:</strong>&nbsp;&nbsp;Debbie King</li>
-            </ul>
+            <h2>Officers</h2>
+            <div id="staffContainer"></div>
         </div>
         <aside>
             <h2>Upcoming Events</h2>
         </aside>
     </main>
     <main-footer></main-footer>
+    
+    <template id="staffTemplate">
+        <div class="staff">
+            <picture>
+                <source srcset="" type="image/webp" />
+                <img src="" alt="">
+            </picture>
+            <p class="title"></p>
+            <a class="name"></a>
+        </div>
+    </template>
+
     <script src="js/headers.js" type="module"></script>
     <script src="js/main.js" type="module"></script>
+    <script src="js/staff.js" type="module"></script>
 </body>
 </html>

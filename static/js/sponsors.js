@@ -10,8 +10,8 @@ export default [
             "zip": "62056"
         },
         "category": "Motorcycle",
-        "logo": "niehaus",
-        "resolutions": [1]
+        "logo": "Niehaus",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Germantown Grille",
@@ -24,7 +24,7 @@ export default [
             "zip": "61548"
         },
         "category": "Restaurant",
-        "logo":"AD_Germantown_Grille",
+        "logo":"Germantown_Grille",
         "resolutions": [1,2,3]
     },
     {
@@ -65,7 +65,7 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": "AD_Big_Arts_Yokel",
+        "logo": "Big_Arts_Yokel",
         "resolutions": [1,2,3]
     },
     {
@@ -79,8 +79,8 @@ export default [
             "zip": "61548"
         },
         "category":"Restaurant",
-        "logo": "kourisPub",
-        "resolutions": [1]
+        "logo": "Kouris_Pub",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Semper Fi Cycle",
@@ -121,8 +121,8 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": "jacksCafe",
-        "resolutions": [1]
+        "logo": "Jacks_Cafe",
+        "resolutions": [1,2,3]
     },
     {
         "name": "The Spotted Cow",
@@ -149,22 +149,23 @@ export default [
             "zip": "61611"
         },
         "category":"Restaurant",
-        "logo": "mickiesPizzeria",
-        "resolutions": [1]
+        "logo": "Mickies_Pizzeria",
+        "resolutions": [1,2,3]
     },
-    // {
-    //     "name": "Germantown Hills PC",
-    //     "website": "https://www.germantown-pc.com/",
-    //     "phone": "309-648-1553",
-    //     "address": {
-    //         "street": "509 Jubilee Lane",
-    //         "city": "Germantown Hills",
-    //         "state": "IL",
-    //         "zip": "61548"
-    //     },
-    //     "category":"Services",
-    //     "logo": "germantownPC"
-    // },
+    {
+        "name": "Germantown Hills PC",
+        "website": "https://www.germantown-pc.com/",
+        "phone": "309-648-1553",
+        "address": {
+            "street": "509 Jubilee Lane",
+            "city": "Germantown Hills",
+            "state": "IL",
+            "zip": "61548"
+        },
+        "category":"Services",
+        "logo": "Germantown_PC",
+        "resolutions": [1,2,3]
+    },
     {
         "name": "Busy Corner",
         "website": "https://abusycorner.com/",
@@ -176,7 +177,7 @@ export default [
             "zip": "61742"
         },
         "category":"Restaurant",
-        "logo": "AD_Busy_Corner",
+        "logo": "Busy_Corner",
         "resolutions": [1,2,3]
     },
     {
@@ -189,8 +190,8 @@ export default [
             "state": "IL",
             "zip": "61615"
         },
-        "category":"Services",
-        "logo": "AD_Better_Banks_Investments",
+        "category": "Services",
+        "logo": "Better_Banks_Investments",
         "resolutions": [1,2,3]
     }
 ]
