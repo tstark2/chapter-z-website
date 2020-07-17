@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const source = picture.querySelector('source');
 
             source.setAttribute('srcset', `../img/staffPhotos/${member.photo}.webp`);
-            img.setAttribute('src', `../img/staffPhotos/${member.photo}.png`);
+            img.setAttribute('src', `../img/staffPhotos/${member.photo}.jpg`);
             img.setAttribute('alt', member.name);
             div.querySelector('.title').textContent = member.title;
             div.querySelector('.name').textContent = member.name;
