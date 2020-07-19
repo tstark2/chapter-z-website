@@ -93,8 +93,9 @@ main aside .event .dateTime {
     font-size:0.9em;
 }
 
-main aside .event .dateTime p {
+main aside .event .dateTime p, main aside .event .dateTime a {
     margin-bottom:0;
+    margin-top:10px;
 }
 
 main aside .event i {

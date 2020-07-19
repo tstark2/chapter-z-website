@@ -129,7 +129,7 @@ function makeEvent(event) {
     const title = document.createElement('p');
     const location = document.createElement('a');
     const time = document.createElement('p');
-    const day = document.createElement('p');
+    const day = document.createElement('a');
 
     div.className = 'event';
     title.className = 'title';
@@ -150,6 +150,8 @@ function makeEvent(event) {
     }
 
     if(event.start.dateTime !== undefined) {
+        day.href = event.htmlLink;
+        day.setAttribute('target', '_blank');
         const calendarIcon = document.createElement('i');
         const clockIcon = document.createElement('i');
         const startDate = getDateAndTime(event.start.dateTime);
