@@ -67,6 +67,11 @@ main aside {
     color:var(--purple);
 }
 
+main aside section {
+    position:sticky;
+    top:0px;
+}
+
 main aside h2 {
     font-size:1.75em;
 }

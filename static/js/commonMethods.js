@@ -87,9 +87,11 @@ export function makeSponsorAd(sponsor) {
     let webpString = '';
     let oneXModifier = '';
 
-    link.href = sponsor.website;
-    link.setAttribute('target', '_blank');
-
+    if(sponsor.website !== null) {
+        link.href = sponsor.website;
+        link.setAttribute('target', '_blank');
+    }
+    
     if(sponsor.resolutions.length > 1) {
         for(const resolution of sponsor.resolutions) {
             oneXModifier = '@1x';

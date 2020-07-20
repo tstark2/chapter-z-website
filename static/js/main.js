@@ -3,7 +3,7 @@ import * as Common from './commonMethods.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   getCalendar().then(events => {
-      const eventList = document.querySelector('main aside');
+      const eventList = document.querySelector('main aside section');
       for(const event of events.items) {
           eventList.appendChild(makeEvent(event));
       }
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sponsorSection = document.getElementsByTagName('sub-header')[0].shadowRoot.querySelector('#sponsors');
   let adStart;
   const sponsorLength = sponsors.length - 1;
-  document.documentElement.style.setProperty('--adCount', adCount);
+//   document.documentElement.style.setProperty('--adCount', adCount);
 
   if(adCount < 2) {
       sponsorSection.style.alignItems = 'center';
@@ -60,10 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstSponsor = sponsors[sponsorIds[i]];
     const nextSponsor = sponsors[sponsorIds[i + adCount]];
 
-    first.href = firstSponsor.website;
+    if(firstSponsor.website !== null) {
+        first.href = firstSponsor.website;
+    } else {
+        first.removeAttribute('href');
+    }
+
     first.replaceChild(Common.makeSponsorPicture(firstSponsor), first.querySelector('picture'));
 
-    next.href = nextSponsor.website;
+    if(nextSponsor.website !== null) {
+        next.href = nextSponsor.website;
+    } else {
+        next.removeAttribute('href');
+    }
+    
     next.replaceChild(Common.makeSponsorPicture(nextSponsor), next.querySelector('picture'));
 
     sponsorSection.appendChild(ad);
@@ -90,12 +100,22 @@ document.addEventListener("DOMContentLoaded", () => {
           const nextPicture = next.querySelector('picture');
           const firstPicture = first.querySelector('picture');
 
-          next.href = newSponsor.website;
+          if(newSponsor.website !== null) {
+            next.href = newSponsor.website;
+          } else {
+              next.removeAttribute('href');
+          }
+
           next.replaceChild(newPicture, nextPicture);
           next.classList.add('down');
 
           setTimeout(() => {
-              first.href = newSponsor.website;
+              if(newSponsor.website !== null) {
+                first.href = newSponsor.website;
+              } else {
+                  first.removeAttribute('href');
+              }
+              
               first.replaceChild(newPicture.cloneNode(true), firstPicture);
               next.classList.add('hide');
 

@@ -38,22 +38,23 @@ export default [
             "zip": "61554"
         },
         "category":"Restaurant",
-        "logo": "ourInnPlace",
-        "resolutions": [1]
+        "logo": "Our_Inn_Place",
+        "resolutions": [1,2,3]
     },
-    // {
-    //     "name": "Town and Kountry Kitchen",
-    //     "website": "https://www.facebook.com/townandkountrykitchen/",
-    //     "phone": "309-383-2900",
-    //     "address": {
-    //         "street": "385 Germantown Rd",
-    //         "city": "Germantown Hills",
-    //         "state": "IL",
-    //         "zip": "61548"
-    //     },
-    //     "category":"Restaurant",
-    //     "logo": "townAndKountryKitchen"
-    // },
+    {
+        "name": "Town and Kountry Kitchen",
+        "website": "https://www.facebook.com/townandkountrykitchen/",
+        "phone": "309-383-2900",
+        "address": {
+            "street": "385 Germantown Rd",
+            "city": "Germantown Hills",
+            "state": "IL",
+            "zip": "61548"
+        },
+        "category":"Restaurant",
+        "logo": "Town&Kountry",
+        "resolutions": [1,2,3]
+    },
     {
         "name": "Big Art's Yokel",
         "website": "https://www.bigartsyokel.com",
@@ -93,8 +94,8 @@ export default [
             "zip": "61568"
         },
         "category": "Motorcycle",
-        "logo": "semperFi",
-        "resolutions": [1]
+        "logo": "Semper_Fi_Cycle",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Perdue's Grill",
@@ -107,8 +108,8 @@ export default [
             "zip": "61568"
         },
         "category":"Restaurant",
-        "logo": "perduesGrill",
-        "resolutions": [1]
+        "logo": "Perdues",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Jack's Cafe",
@@ -135,8 +136,8 @@ export default [
             "zip": "61614"
         },
         "category":"Restaurant",
-        "logo": "theSpottedCow",
-        "resolutions": [1]
+        "logo": "The_Spotted_Cow",
+        "resolutions": [1,2,3]
     },
     {
         "name": "Mickie's Pizzeria",
@@ -192,6 +193,34 @@ export default [
         },
         "category": "Services",
         "logo": "Better_Banks_Investments",
+        "resolutions": [1,2,3]
+    },
+    {
+        "name": "Ricky's Gas",
+        "website": "https://facebook.com/rickysgas",
+        "phone": "309-550-5109",
+        "address": {
+            "street": "409 Jubilee Ln",
+            "city": "Germantown Hills",
+            "state": "IL",
+            "zip": "61548"
+        },
+        "category": "Retail",
+        "logo": "Rickys_Gas",
+        "resolutions": [1,2,3]
+    },
+    {
+        "name": "T & D Windshield",
+        "website": null,
+        "phone":  "309-369-4590",
+        "address": {
+            "street": "205 John",
+            "city": "North Pekin",
+            "state": "IL",
+            "zip": "61554"
+        },
+        "category": "Services",
+        "logo": "T&D_Windshield",
         "resolutions": [1,2,3]
     }
 ]
