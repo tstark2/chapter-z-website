@@ -54,6 +54,7 @@ class MainHeader extends HTMLElement {
             {href: "newsletter.html", title: "Newsletters"},
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar", options: {target: "_blank"}},
             {href: "sponsors.html", title: "Sponsors"},
+            {href: "links.html", title: "Links"},
             {href: "mailto:il.chapter.z@gmail.com", title: "Contact Us"},
             {href: "#close", title: "Close Menu"}
 
@@ -105,7 +106,7 @@ class SubHeader extends HTMLElement {
 
         ilDistrictLogo.href = 'http://gwrra-ildistrict.com/index.html';
         ilDistrictLogo.setAttribute('target', '_blank');
-        ilDistrictLogo.appendChild(Common.makePicture('img/illinoisSeal'));
+        ilDistrictLogo.appendChild(Common.makeResponsivePicture('ilSeal'));
         header.appendChild(ilDistrictLogo);
 
         shadow.appendChild(header);
