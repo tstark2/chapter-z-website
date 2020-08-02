@@ -81,5 +81,11 @@ const links = [
         href: "https://www.facebook.com/ILChapterZ",
         picture: "fb",
         resolutions: [1,2,3]
+    },
+    {
+        title: "GWRRA University",
+        href: "https://gwrradot.com",
+        picture: "gwrraUniversity",
+        resolutions: [1,2,3]
     }
 ]
