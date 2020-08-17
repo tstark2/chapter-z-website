@@ -4,7 +4,7 @@ services:
     tty: true
     stdin_open: true
     image: node:alpine
-    container_name: chapterZ-dev
+    container_name: chapterZ
     volumes:
       - "/var/www/chapter-z-website:/code"
     networks: 
