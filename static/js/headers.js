@@ -55,7 +55,7 @@ class MainHeader extends HTMLElement {
             {href: "https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago", title: "Calendar", options: {target: "_blank"}},
             {href: "sponsors.html", title: "Sponsors"},
             {href: "links.html", title: "Links"},
-            {href: "mailto:il.chapter.z@gmail.com", title: "Contact Us"},
+            {href: "mailto:cd@il-chapter-z.org", title: "Contact Us"},
             {href: "#close", title: "Close Menu"}
 
         ];

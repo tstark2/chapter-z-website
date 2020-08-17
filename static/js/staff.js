@@ -28,25 +28,25 @@ const staff = [
     {
         title: "Chapter Director",
         name: "Debbie King",
-        email: "cd+il.chapter.z@gmail.com",
+        email: "cd@il-chapter-z.org",
         photo: "kingd_cropped"
     },
     {
         title: "Assistant Chapter Director",
         name: "Gail Onken",
-        email: "acd+il.chapter.z@gmail.com",
+        email: "acd@il-chapter-z.org",
         photo: "onkeng_cropped"
     },
     {
         title: "Ride Coordinator",
         name: "Brian King",
-        email: "rc+il.chapter.z@gmail.com",
+        email: "ridered@il-chapter-z.org",
         photo: "kingb_cropped"
     },
     {
         title: "Treasurer",
         name: "Rhonda Morris",
-        email: "treasurer+il.chapter.z@gmail.com",
+        email: "treasurer@il-chapter-z.org",
         photo: "morrisr_cropped"
     }
 ];
