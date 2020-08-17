@@ -144,7 +144,7 @@ class MainFooter extends HTMLElement {
         textDiv.appendChild(dev);
         textDiv.className = 'footerText';
 
-        emailLink.href = 'mailto:il.chapter.z@gmail.com';
+        emailLink.href = 'mailto:cd@il-chapter-z.org';
         emailLogo.setAttribute('type', 'image/svg+xml');
         emailLogo.setAttribute('data', '../img/email-outline.svg');
 
