@@ -35,6 +35,12 @@ function makeSourceString(item, type) {
 
 const links = [
     {
+        title: "GWRRA National Site",
+        href: "https://gwrra.org",
+        picture: "gwrraSeal",
+        resolutions: [1,2,3]
+    },
+    {
         title: "Motorist Awareness Program",
         href: "https://map-gwrra.org",
         picture: "map",
@@ -47,9 +53,9 @@ const links = [
         resolutions: [1,2,3]
     },
     {
-        title: "Groupworks",
-        href: "https://app.groupworks.com",
-        picture: "groupworks",
+        title: "GWRRA University",
+        href: "https://gwrradot.com",
+        picture: "gwrraUniversity",
         resolutions: [1,2,3]
     },
     {
@@ -59,15 +65,9 @@ const links = [
         resolutions: [1,2]
     },
     {
-        title: "GWRRA National Site",
-        href: "https://gwrra.org",
-        picture: "gwrraSeal",
-        resolutions: [1,2,3]
-    },
-    {
-        title: "GWRRA Illinois District",
-        href: "https://gwrra-ildistrict.com",
-        picture: "ilSeal",
+        title: "Wing World",
+        href: "http://wingworldmag.com",
+        picture: "wingWorld",
         resolutions: [1,2,3]
     },
     {
@@ -77,15 +77,21 @@ const links = [
         resolutions: [1,2,3]
     },
     {
-        title: "Facebook",
-        href: "https://www.facebook.com/ILChapterZ",
-        picture: "fb",
+        title: "GWRRA Illinois District",
+        href: "https://gwrra-ildistrict.com",
+        picture: "ilSeal",
         resolutions: [1,2,3]
     },
     {
-        title: "GWRRA University",
-        href: "https://gwrradot.com",
-        picture: "gwrraUniversity",
+        title: "Groupworks",
+        href: "https://app.groupworks.com",
+        picture: "groupworks",
+        resolutions: [1,2,3]
+    },    
+    {
+        title: "Facebook",
+        href: "https://www.facebook.com/ILChapterZ",
+        picture: "fb",
         resolutions: [1,2,3]
     }
 ]
