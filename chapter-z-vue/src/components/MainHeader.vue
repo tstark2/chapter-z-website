@@ -1,0 +1,170 @@
+<template>
+    <header>
+        <div>
+            <a href="/">
+                <picture>
+                    <source srcset="../assets/img/logoTransparent.webp" type="image/webp">
+                    <img src="../assets/img/logoTransparent.png" />
+                </picture>
+            </a>
+
+            <h1>GWRRA Illinois Chapter Z</h1>
+            <button id="menuButton"><i class="fas fa-bars"></i></button>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Staff</a>
+                <a href="https://www.facebook.com/ILChapterZ/photos/">Photos</a>
+                <a href="#">Newsletters</a>
+                <a href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago">Calendar</a>
+                <a href="#">Sponsors</a>
+                <a href="#">Links</a>
+                <a href="mailto:cd@il-chapter-z.org">Contact Us</a>
+                <a href="#" id="closeMenuButton">Close Menu</a>
+            </nav>
+        </div>
+    </header>
+</template>
+
+<script>
+export default {
+    name: "MainHeader"
+}
+</script>
+
+<style scoped>
+
+header {
+    background-color:var(--purple);
+}
+
+header div {
+    width:75vw;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:0 20px;
+    position:relative;
+}
+
+#menuButton, #closeMenuButton {
+    display:none;
+}
+
+nav {
+    grid-column-start: 2;
+    display:flex;
+    justify-content:flex-start;
+    align-items:baseline;
+    padding-bottom:5px;
+}
+
+nav a {
+    color:var(--white);
+    text-decoration:none;
+    margin-right:20px;
+}
+
+nav a:hover {
+    color:var(--yellow);
+}
+
+nav a[href="#close"] {
+    display:none;
+}
+
+header div img {
+    height:150px;
+    width:auto;
+    transform:translateY(10px);
+}
+
+h1 {
+    font-family:var(--displayFont);
+    color:var(--white);
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    font-size:3em;
+}
+
+@media (max-device-width: 800px) and (orientation: portrait), (max-width: 1024px) and (orientation: landscape) {
+    header div {
+        grid-template-columns: 120px 1fr 40px;
+        width:90vw;
+    }
+    
+    header div img {
+        height:120px;
+        transform:translateY(0);
+    }
+    
+    #menuButton {
+        display:flex;
+        background-color:transparent;
+        border:0;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    #menuButton object {
+        pointer-events:none;
+    }
+
+    nav {
+        position:fixed;
+        right:0;
+        top:0;
+        background-color:var(--purple);
+        width:0;
+        flex-direction:column;
+        padding:0;
+        height:100vh;
+        overflow:hidden;
+        transition: width 1s padding 1s;
+        z-index:3;
+    }
+
+    nav a[href="#close"] {
+        display:block;
+        color:var(--yellow);
+    }
+
+    nav.open {
+        width:33vw;
+        padding:6px 12px;
+        border-left:5px solid var(--yellow);
+    }
+
+    nav a {
+        margin-bottom:20px;
+        font-size:1.5em;
+    }
+
+    h1 {
+        font-size:2em;
+        /* white-space:nowrap; */
+        text-align:center;
+    }
+}
+
+@media (max-device-width: 576px) {
+    header div {
+        grid-template-columns: 75px 1fr 40px;
+    }
+
+    header div img {
+        height:75px;
+    }
+
+    h1 {
+        font-size:1em;
+    }
+
+    nav.open {
+        width:50vw;
+    }
+}
+
+</style>
