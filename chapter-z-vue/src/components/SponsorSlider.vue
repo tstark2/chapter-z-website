@@ -1,0 +1,54 @@
+<template>
+    <div>
+        <a href="" class="next">
+            <picture></picture>
+        </a>
+        <a href="" class="first">
+            <picture></picture>
+        </a>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "SponsorSlider"
+}
+</script>
+
+<style scoped>
+div {
+    position:relative;
+    display:block;
+    width:280px;
+    height:150px;
+    overflow:hidden;
+    box-sizing:border-box;
+    border:1px solid #000;
+}
+
+a {
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.first {
+    z-index:0;
+}
+
+.next {
+    position:absolute;
+    top:-152px;
+    left:50%;
+    transform:translateX(-50%);
+    transition:top 1s;
+}
+
+.next.down {
+    top:0px;
+}
+
+.next.hide {
+    z-index:-10;
+}
+</style>

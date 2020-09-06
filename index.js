@@ -6,7 +6,7 @@ const http = require('http');
 
 require('dotenv').config();
 
-app.use(express.static(`${__dirname}/static`));
+// app.use(express.static(`${__dirname}/static`));
 
 app.get('/api/calendar', (request, response) => {
     console.log('GET to /api/calendar');
