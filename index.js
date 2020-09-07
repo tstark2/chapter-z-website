@@ -8,6 +8,12 @@ require('dotenv').config();
 
 // app.use(express.static(`${__dirname}/static`));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.get('/api/calendar', (request, response) => {
     console.log('GET to /api/calendar');
     getCalendar().then(events => {

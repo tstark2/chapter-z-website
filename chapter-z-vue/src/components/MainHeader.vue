@@ -1,24 +1,24 @@
 <template>
     <header>
         <div>
-            <a href="/">
+            <router-link to="/">
                 <picture>
                     <source srcset="../assets/img/logoTransparent.webp" type="image/webp">
                     <img src="../assets/img/logoTransparent.png" />
                 </picture>
-            </a>
+            </router-link>
 
             <h1>GWRRA Illinois Chapter Z</h1>
             <button id="menuButton"><i class="fas fa-bars"></i></button>
             <nav>
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Staff</a>
-                <a href="https://www.facebook.com/ILChapterZ/photos/">Photos</a>
-                <a href="#">Newsletters</a>
-                <a href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago">Calendar</a>
-                <a href="#">Sponsors</a>
-                <a href="#">Links</a>
+                <router-link to="/">Home</router-link>
+                <router-link to="/about">About Us</router-link>
+                <router-link to="/staff">Staff</router-link>
+                <a href="https://www.facebook.com/ILChapterZ/photos/" target="_blank">Photos</a>
+                <router-link to="/newsletters">Newsletters</router-link>
+                <a href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago" target="_blank">Calendar</a>
+                <router-link to="/sponsors">Sponsors</router-link>
+                <router-link to="/links">Links</router-link>
                 <a href="mailto:cd@il-chapter-z.org">Contact Us</a>
                 <a href="#" id="closeMenuButton">Close Menu</a>
             </nav>

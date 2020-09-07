@@ -1,23 +1,41 @@
 <template>
     <div class="event">
-        <p class="title"></p>
-        <a href="" class="location">
+        <p class="title">{{event.summary}}</p>
+        <a :href="makeMapLink" class="location" target="_blank">
             <i class="fas fa-map-marker-alt"></i>
+            {{ event.location }}
         </a>
         <div class="dateTime">
-            <a href="" class="date">
+            <a :href="event.htmlLink" class="date" target="_blank">
                 <i class="fas fa-calendar-alt"></i>
+                {{ getDateTime.date }}
             </a>
-            <a href="" class="time">
+            <p class="time">
                 <i class="fas fa-clock"></i>
-            </a>
+                {{ getDateTime.time }}
+            </p>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "CalendarEntry"
+    name: "CalendarEntry",
+    props: {
+        event: Object
+    },
+    computed: {
+        getDateTime() {
+            const date = new Date(this.event.start.dateTime);
+            return {
+                date: `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`,
+                time: date.toLocaleTimeString('en-US').replace(':00 ', ' ')
+            }
+        },
+        makeMapLink() {
+           return encodeURI(`https://www.google.com/maps/search/?api=1&query=${this.event.location}`);
+        }
+    }
 }
 </script>
 
