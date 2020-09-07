@@ -11,7 +11,11 @@
 
 <script>
 export default {
-    name: "SponsorSlider"
+    name: "SponsorSlider",
+    props: {
+        current: Object,
+        next: Object
+    }
 }
 </script>
 

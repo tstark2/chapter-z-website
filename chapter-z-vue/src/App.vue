@@ -3,7 +3,7 @@
         <MainHeader></MainHeader>
         <SubHeader></SubHeader>
         <main>
-            <section></section>
+            <router-view></router-view>
             <CalendarAside></CalendarAside>
         </main>
         <AppFooter></AppFooter>
@@ -55,6 +55,53 @@ main {
     gap:12px;
     padding:6px 12px;
     min-height:calc(100vh - 408px);
+}
+
+h2 {
+    font-family:var(--displayFont);
+}
+
+main h2 {
+    margin-top:0;
+    font-size:3em;
+}
+
+#gwrraText {
+    font-size:2em;
+}
+
+.subheading {
+    font-size:1.5em;
+    color:var(--purple);
+    font-family:var(--scriptFont);
+}
+
+.purple {
+    color:var(--purple);
+}
+
+.covid {
+    color:#f00;
+    font-weight:bold;
+    font-size:1.05em;
+}
+
+#trialMembership img {
+    max-width:100%;
+    height:auto;
+}
+
+.contentGrid {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+}
+
+.contentGrid div, .contentGrid > a {
+    border:1px solid var(--textColor);
+    border-radius:5px;
+    padding:6px 12px;
+    text-align:center;
 }
 
 @media (max-device-width: 800px) {

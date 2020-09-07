@@ -2,12 +2,12 @@
     <aside>
         <section>
             <h2>Upcoming Events</h2>
-            <div id="events">
-                <CalendarEntry></CalendarEntry>
-                <CalendarEntry></CalendarEntry>
-                <CalendarEntry></CalendarEntry>
-                <CalendarEntry></CalendarEntry>
-                <CalendarEntry></CalendarEntry>
+            <div id="events" v-if="events">
+                <CalendarEntry
+                    v-for="event in events"
+                    :event="event"
+                    :key="event.id"
+                ></CalendarEntry>
             </div>
         </section>
     </aside>    
@@ -15,11 +15,30 @@
 
 <script>
 import CalendarEntry from "./CalendarEntry";
+const URL = 'http://localhost:32405';
 
 export default {
     name: "CalendarAside",
     components: {
         CalendarEntry
+    },
+    data() {
+        return {
+            events: []
+        }
+    },
+    methods: {
+        async getCalendarEvents() {
+            const response = await fetch(`${URL}/api/calendar`);
+
+            if(response.ok) {
+                const result = await response.json();
+                this.events = result.items;
+            }
+        },
+    },
+    created() {
+        this.getCalendarEvents();
     }
 }
 </script>
