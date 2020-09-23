@@ -9,7 +9,7 @@ services:
       - "/var/www/chapter-z-website:/code"
     networks: 
       - chapterZ
-    command: sh -c "cd /code && npm install && npm start"
+    command: sh /code/buildAndRun.sh
 networks:
   chapterZ:
     external: true

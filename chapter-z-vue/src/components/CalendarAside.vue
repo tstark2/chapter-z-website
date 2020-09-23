@@ -15,7 +15,7 @@
 
 <script>
 import CalendarEntry from "./CalendarEntry";
-const URL = 'http://localhost:32405';
+const URL = '';
 
 export default {
     name: "CalendarAside",

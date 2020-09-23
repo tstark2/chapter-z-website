@@ -18,6 +18,7 @@
   },
   "homepage": "https://gitlab.com/tstark2/chapter-z-website#readme",
   "dependencies": {
+    "connect-history-api-fallback-exclusions": "^1.5.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0"
