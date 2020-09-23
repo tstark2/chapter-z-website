@@ -24,7 +24,10 @@ export default {
         SubHeader,
         CalendarAside,
         AppFooter
-    } 
+    },
+    created() {
+        document.title = "Illinois Chapter Z GWRRA";
+    }
 }
 </script>
 

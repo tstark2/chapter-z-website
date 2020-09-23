@@ -14,7 +14,7 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
     mode: "history",
     routes: [
-        {path: "/", component: Home},
+        {path: "/", component: Home,},
         {path: "/about", component: AboutUs},
         {path: "/staff", component: Staff},
         {path: "/newsletters", component: Newsletters},

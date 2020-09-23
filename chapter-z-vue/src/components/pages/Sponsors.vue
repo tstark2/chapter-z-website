@@ -18,7 +18,7 @@ export default {
     },
     data() {
         return {
-            sponsors: Sponsors
+            sponsors: Sponsors.list
         }
     }
 }

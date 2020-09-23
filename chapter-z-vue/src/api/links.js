@@ -58,5 +58,12 @@ export default [
         href: "https://www.facebook.com/ILChapterZ",
         picture: "fb",
         resolutions: [1,2,3]
+    },
+    {
+        title: "Illinois Adventure",
+        href: "http://www.illinoisadventuretv.org",
+        picture: "illinoisAdventure",
+        resolutions: [1,2,3]
+
     }
 ]

@@ -14,9 +14,8 @@
             </picture>
         </a>
 
-        <div id="sponsors">
-            <SponsorSlider></SponsorSlider>
-            <SponsorSlider></SponsorSlider>
+        <div id="sponsors" ref="sponsors">
+            <SponsorSlider v-for="ad in ads" :key="ad"></SponsorSlider>
         </div>
 
         <a href="http://gwrra-ildistrict.com/index.html">
@@ -42,6 +41,28 @@ export default {
     name: "SubHeader",
     components: {
         SponsorSlider
+    },
+    data() {
+        return {
+            sponsorWidth: 0,
+            ads: []
+        }
+    },
+    methods: {
+        adCount() {
+            const count = Math.floor(this.sponsorWidth / 280);
+            for(let i = 0; i < count; i++) {
+                this.ads.push(i);
+            }
+        }
+    },
+    mounted() {
+        const sponsorSection = this.$refs.sponsors;
+        
+        this.$nextTick(function() {  
+            this.sponsorWidth = sponsorSection.clientWidth;
+            this.adCount();
+        });
     }
 }
 </script>
