@@ -10,7 +10,7 @@
 
 <script>
 import Newsletter from "../Newsletter";
-const URL = 'http://localhost:32405';
+const URL = '';
 
 export default {
     name: "Newsletters",
