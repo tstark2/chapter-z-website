@@ -9,4 +9,4 @@ services:
       - "/Users/todd/Documents/Projects/chapter-z-website:/code"
     ports:
       - 32405:80
-    command: sh -c "cd /code && npm install && npm start"
+    command: sh /code/buildAndRun.sh

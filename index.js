@@ -3,10 +3,22 @@ const app = express();
 const fetch = require('node-fetch');
 const google = 'https://www.googleapis.com';
 const http = require('http');
+const history = require('connect-history-api-fallback-exclusions');
 
 require('dotenv').config();
 
-app.use(express.static(`${__dirname}/static`));
+app.use(history({
+    exclusions: [
+        '/api/*'
+    ]
+}));
+
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get('/api/calendar', (request, response) => {
     console.log('GET to /api/calendar');
@@ -25,6 +37,8 @@ app.get('/api/newsletters', (request, response) => {
         response.send(err);
     });
 });
+
+app.use(express.static(`${__dirname}/chapter-z-vue/dist`));
 
 const server = app.listen(80, () => {
     const port = server.address().port;
