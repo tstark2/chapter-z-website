@@ -105,10 +105,11 @@ main h2 {
     border-radius:5px;
     padding:6px 12px;
     text-align:center;
+    box-sizing:border-box;
 }
 
 @media (max-device-width: 800px) {
-    main {
+    .contentGrid, main {
         grid-template-columns:1fr;
         width:90vw;
     }

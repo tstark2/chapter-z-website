@@ -9,18 +9,18 @@
             </router-link>
 
             <h1>GWRRA Illinois Chapter Z</h1>
-            <button id="menuButton"><i class="fas fa-bars"></i></button>
-            <nav>
-                <router-link to="/">Home</router-link>
-                <router-link to="/about">About Us</router-link>
-                <router-link to="/staff">Staff</router-link>
-                <a href="https://www.facebook.com/ILChapterZ/photos/" target="_blank">Photos</a>
-                <router-link to="/newsletters">Newsletters</router-link>
-                <a href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago" target="_blank">Calendar</a>
-                <router-link to="/sponsors">Sponsors</router-link>
-                <router-link to="/links">Links</router-link>
-                <a href="mailto:cd@il-chapter-z.org">Contact Us</a>
-                <a href="#" id="closeMenuButton">Close Menu</a>
+            <button id="menuButton" @click="openNav"><i class="fas fa-bars"></i></button>
+            <nav ref="nav">
+                <router-link @click.native="closeNav" to="/">Home</router-link>
+                <router-link @click.native="closeNav" to="/about">About Us</router-link>
+                <router-link @click.native="closeNav" to="/staff">Staff</router-link>
+                <a @click="closeNav" href="https://www.facebook.com/ILChapterZ/photos/" target="_blank">Photos</a>
+                <router-link @click.native="closeNav" to="/newsletters">Newsletters</router-link>
+                <a @click="closeNav" href="https://calendar.google.com/calendar/embed?src=il.chapter.z%40gmail.com&ctz=America%2FChicago" target="_blank">Calendar</a>
+                <router-link @click.native="closeNav" to="/sponsors">Sponsors</router-link>
+                <router-link @click.native="closeNav" to="/links">Links</router-link>
+                <a @click="closeNav" href="mailto:cd@il-chapter-z.org">Contact Us</a>
+                <a href="#" @click="closeNav" id="closeMenuButton">Close Menu</a>
             </nav>
         </div>
     </header>
@@ -28,7 +28,17 @@
 
 <script>
 export default {
-    name: "MainHeader"
+    name: "MainHeader",
+    methods: {
+        openNav() {
+            const nav = this.$refs.nav;
+            nav.classList.add("open");
+        },
+        closeNav() {
+            const nav = this.$refs.nav;
+            nav.classList.remove("open"); 
+        }
+    }
 }
 </script>
 
@@ -106,10 +116,8 @@ h1 {
         border:0;
         flex-direction:column;
         justify-content:center;
-    }
-
-    #menuButton object {
-        pointer-events:none;
+        color:#fff;
+        font-size:1.25em;
     }
 
     nav {
@@ -126,7 +134,7 @@ h1 {
         z-index:3;
     }
 
-    nav a[href="#close"] {
+    #closeMenuButton {
         display:block;
         color:var(--yellow);
     }

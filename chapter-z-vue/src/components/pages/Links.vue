@@ -30,4 +30,11 @@ section {
     grid-template-columns:repeat(3, 1fr);
     gap:10px;
 }
+
+@media (max-device-width: 800px) {
+    section {
+        grid-template-columns:1fr;
+        width:90vw;
+    }
+}
 </style>
