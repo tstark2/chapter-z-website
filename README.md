@@ -1,26 +1,6 @@
 # Chapter Z Website
 
-## Site Requirements
+The Chapter Z Website is a Vue.js app and a small express API. It's set up to run inside a docker container.
+Docker-compose files are included for your convenience. 
 
-* Calendar
-* Officers
-* Photos
-* Link to Facebook
-* Contact Page
-* History
-* Newsletter
-* New Member Sign Up Form?
-  * Link to national page's sign up form
-
-## APIs
-
-* Photos: Facebook
-* Calendar: Google
-* Newsletter: Google Docs
-
-## Needed before release
-
-* Calendar cleanup
-* Staff photos
-* Sponsor data
-* Contact page
+_Note: You'll need to create a `.env` file int the root of the project with a Google API key before launching the container._
