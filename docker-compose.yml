@@ -9,6 +9,8 @@ services:
       - "/var/www/chapter-z-website/.env:/var/www/.env"
     ports:
       - 32405:80
+    networks:
+      - chapterZ
 networks:
   chapterZ:
     external: true
