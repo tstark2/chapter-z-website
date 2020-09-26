@@ -5,7 +5,7 @@ const google = 'https://www.googleapis.com';
 const http = require('http');
 const history = require('connect-history-api-fallback-exclusions');
 
-require('dotenv').config();
+require('dotenv').config({"path": "/var/www/.env"});
 
 app.use(history({
     exclusions: [
@@ -25,6 +25,7 @@ app.get('/api/calendar', (request, response) => {
     getCalendar().then(events => {
         response.send(events);
     }).catch(err => {
+        console.log(err);
         response.send(err);
     });
 });
@@ -38,7 +39,7 @@ app.get('/api/newsletters', (request, response) => {
     });
 });
 
-app.use(express.static(`${__dirname}/chapter-z-vue/dist`));
+app.use(express.static('/dist'));
 
 const server = app.listen(80, () => {
     const port = server.address().port;
@@ -60,7 +61,7 @@ async function getCalendar() {
         return await response.json();
     }
 
-    throw new Error('Error fetching calendar');
+    throw new Error(await response.text());
 }
 
 async function getNewsletters() {
@@ -71,7 +72,6 @@ async function getNewsletters() {
     params.append('fields', 'files/name,files/webViewLink')
     params.append('pageSize', 12);
     const response = await fetch(`${google}/drive/v3/files?${params.toString()}`);
-    
 
     if(response.ok) {
         return await response.json();

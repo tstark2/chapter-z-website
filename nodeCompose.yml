@@ -3,10 +3,9 @@ services:
   server:
     tty: true
     stdin_open: true
-    image: node:alpine
+    image: registry.gitlab.com/tstark2/chapter-z-website/server:1.0.8
     container_name: chapterZ-node
     volumes:
-      - "/Users/todd/Documents/Projects/chapter-z-website:/code"
+      - "/Users/todd/Documents/Projects/chapter-z-website/.env:/var/www/.env"
     ports:
       - 32405:80
-    command: sh /code/buildAndRun.sh
