@@ -112,7 +112,7 @@ export default {
                 setTimeout(() => {
                     next.classList.remove('hide');
                     oThis.updateAds();
-                }, 2000);
+                }, 3000);
 
             }, 1500);
         }, 15000);
