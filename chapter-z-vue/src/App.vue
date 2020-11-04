@@ -60,6 +60,11 @@ main {
     min-height:calc(100vh - 408px);
 }
 
+#special {
+    max-width:100%;
+    height:auto;
+}
+
 h2 {
     font-family:var(--displayFont);
 }
