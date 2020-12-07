@@ -1,7 +1,6 @@
 <template>
     <div>
         <h2 class="purple">Central Illinois Wing Riders</h2>
-        <img id="special" src="../../assets/img/mary-adams-annoucement_orig.jpg" alt="" />
         <p id="charter">Chartered November 12, 1995</p>
         <p id="gwrraText">Gold Wing Road Riders Association (GWRRA)</p>
         <p class="subheading">Friends for Fun, Safety, and Knowledge</p>
