@@ -3,7 +3,7 @@ services:
   server:
     tty: true
     stdin_open: true
-    image: registry.gitlab.com/tstark2/chapter-z-website/server:1.0.9
+    image: registry.gitlab.com/tstark2/chapter-z-website/server:1.0.10
     container_name: chapterZ
     volumes:
       - "/var/www/chapter-z-website/.env:/var/www/.env"
