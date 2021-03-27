@@ -1,9 +1,9 @@
 <template>
     <div>
         <h2>Sponsors</h2>
-        <div class="contentGrid">
+        <section class="contentGrid">
             <Sponsor v-for="sponsor in sponsors" :sponsor="sponsor" :key="sponsor.name" />
-        </div>
+        </section>
     </div>
 </template>
 
