@@ -3,10 +3,11 @@ services:
   server:
     tty: true
     stdin_open: true
-    image: registry.gitlab.com/tstark2/chapter-z-website/server:1.0.10
+    image: registry.gitlab.com/tstark2/chapter-z-website/server:1.0.11
     container_name: chapterZ
     volumes:
       - "/var/www/chapter-z-website/.env:/var/www/.env"
+      - "/var/www/chapter-z-website/chapter-z-vue/dist:/dist"
     ports:
       - 32405:80
     networks:

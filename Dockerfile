@@ -1,6 +1,5 @@
 FROM node:alpine
 
-COPY ./chapter-z-vue/dist /dist
 COPY ./server /server
 
 RUN cd ./server && npm install

@@ -1,34 +1,78 @@
 <template>
-    <article>
-            <h2>About Us</h2>
-            <p>
-                Welcome to the internet home of the Gold Wing Road Riders Association (GWRRA) Illinois Chapter Z.
-                We would like to invite you and your family to join us for some fun and motorcycle riding.
-                Our Chapter has a diverse schedule of activities that includes local and long trips to GWRRA activities,
-                scenic trips, and “Bucket Trip” locations.
-                We try to have at least one long trip lasting a week or more and several weekend trips every year.
-                There are day trips to local festivals and other GWRRA chapter’s events, as well as weekly evening rides for dinner or ice-cream. 
-                We strive to keep our calendar full, allowing our members plenty of opportunity to pick and choose the events in which they would like to participate.
-            </p>
-            <p>We follow GWRRA's motto:<br />
-            <span class="subheading">Friends for Fun, Safety, and Knowledge</span></p>
-            <p>
-                We are a safety orientated group and provide numerous opportunities for rider education.
-                Training consists of modules like, group riding, how to lead a ride and riding in rain to just name a few.
-                We also have CPR and first aid training as well as advanced riding courses that will take you out on a parking lot course with trained instructors.
-            </p>
-            <p class="subheading">All brands of bikes are welcome!</p>
-            <p>
-                We meet on the fourth Sunday of the month at the 
-                <a href="https://www.google.com/maps/place/Germantown+Grille/@40.7632925,-89.4737663,17z/data=!4m5!3m4!1s0x880a5227e6c9c7d5:0x2cf15953358a018b!8m2!3d40.7632885!4d-89.4715776" target="_blank">Germantown Grille, 505 Ten Mile Creek Rd Germantown, Illinois</a>.
-                We eat at 5:00 pm with our meeting at 6:00pm.
-            </p>
-            <p class="covid">Note:&nbsp;&nbsp;Due to COVID-19, the monthly socials are being held in outdoor locations (bring your own picnic dinner). <br />See the calendar for details.</p>
-        </article>
+  <article>
+    <h2>About Us</h2>
+    <p>
+      Welcome to the internet home of the Gold Wing Road Riders Association (GWRRA) Illinois Chapter Z.
+      We would like to invite you and your family to join us for some fun and motorcycle riding.
+      Our Chapter has a diverse schedule of activities that includes local and long trips to GWRRA activities,
+      scenic trips, and “Bucket Trip” locations.
+      We try to have at least one long trip lasting a week or more and several weekend trips every year.
+      There are day trips to local festivals and other GWRRA chapter’s events, as well as weekly evening rides for
+      dinner or ice-cream.
+      We strive to keep our calendar full, allowing our members plenty of opportunity to pick and choose the events in
+      which they would like to participate.
+    </p>
+
+    <h3>Gold Wing Road Riders Association</h3>
+
+    <h4>Mission Statement</h4>
+    <p>
+      Gold Wing Road Riders Association [GWRRA], founded in 1977,
+      is recognized as the world's largest single-marquee motorcycle association in the world.
+      GWRRA provides safety, technical, and educational services to its Members world-wide.
+    </p>
+
+    <h4>Values</h4>
+    <ul>
+      <li>
+        <strong>Friends - </strong>
+        GWRRA Members are men and women from all walks of life with varied
+        interests and backgrounds. We have Gold Wing and other touring motorcycle riders of all age groups.
+        Some ride solo, many ride with small or large groups!
+        Some Members join GWRRA especially for the technical information we share;
+        some of our Members join for the enjoyment of riding with friends or meeting new friends.
+        Find your future riding friends on this
+        <a target="_blank" href="https://gwrra-ildistrict.com/chapters.html">Illinois Region Map</a>.
+      </li>
+      <li>
+        <strong>Fun - </strong>
+        As a family organization, GWRRA has certain fun groups to include restaurant, picnic and campout runs.
+        We also have GWRRA groups to include charities, parades, and small or large events across the country.
+        GWRRA Members can participate in live or video seminars through
+        <a target="_blank" href="https://gwrra.org/regional/ridered/PDF%20Files/UpdatedRiderEdTrifoldBrochure2013_mod.pdf">Rider Education Programs</a>.
+      </li>
+      <li>
+        <strong>Safety - </strong>
+        We strive for improvement through GWRRA safety workshops.
+        We will share technical expertise, news and tips about riding, maintenance, and the best touring routes in the world.
+        <a target="_blank" href="https://gwrra.org/regional/ridered/index.html">Safety is for Life</a> on our GWRRA Rider Education Programs page.
+      </li>
+      <li>
+        <strong>Knowledge - </strong>
+        While generalization about a group of individuals as large as today's GWRRA is difficult,
+        GWRRA Members are likely to be independent thinkers, fun-loving, generous, adventurous, cooperative,
+        and unfazed by the natural challenges of riding in the rain, temperature extremes or highway uncertainties.
+        Many Members have completed CPR and first aid training, making them the best-prepared motorcycle riders on the
+        world's highways! Find "CPR and First Aid Training" on our GWRRA
+        <a target="_blank" href="https://gwrra.org/regional/ridered/medic.html">Medic First Aid International® Programs</a>.
+      </li>
+    </ul>
+
+  </article>
 </template>
 
 <script>
 export default {
-    name: "AboutUs"
-}
+  name: 'AboutUs'
+};
 </script>
+
+<style scoped>
+h4 {
+  margin:0;
+}
+
+ul li {
+  margin-bottom: 12px;
+}
+</style>
