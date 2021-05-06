@@ -58,20 +58,20 @@ export default {
             "logo": "Our_Inn_Place",
             "resolutions": [1, 2, 3]
         },
-        {
-            "name": "Town and Kountry Kitchen",
-            "website": "https://www.facebook.com/townandkountrykitchen/",
-            "phone": "309-383-2900",
-            "address": {
-                "street": "385 Germantown Rd",
-                "city": "Germantown Hills",
-                "state": "IL",
-                "zip": "61548"
-            },
-            "category": "Restaurant",
-            "logo": "Town&Kountry",
-            "resolutions": [1, 2, 3]
-        },
+        // {
+        //     "name": "Town and Kountry Kitchen",
+        //     "website": "https://www.facebook.com/townandkountrykitchen/",
+        //     "phone": "309-383-2900",
+        //     "address": {
+        //         "street": "385 Germantown Rd",
+        //         "city": "Germantown Hills",
+        //         "state": "IL",
+        //         "zip": "61548"
+        //     },
+        //     "category": "Restaurant",
+        //     "logo": "Town&Kountry",
+        //     "resolutions": [1, 2, 3]
+        // },
         {
             "name": "Big Art's Yokel",
             "website": "https://www.bigartsyokel.com",
