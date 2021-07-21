@@ -25,7 +25,7 @@ export default [
     },
     {
         title: "Wing Ding",
-        href: "https://wing-ding.org",
+        href: "http://43.wing-ding.org/",
         picture: "wingDing",
         resolutions: [1,2]
     },
@@ -52,7 +52,7 @@ export default [
         href: "https://app.groupworks.com",
         picture: "groupworks",
         resolutions: [1,2,3]
-    },    
+    },
     {
         title: "Facebook",
         href: "https://www.facebook.com/ILChapterZ",
