@@ -19,9 +19,9 @@ export default [
     },
     {
         title: "Ride Coordinator",
-        name: "Brian King",
-        email: "ridered@il-chapter-z.org",
-        photo: "Brian-Head-on-Seal"
+        name: "Rich Morris",
+        email: "arc@il-chapter-z.org",
+        photo: "Rich_M-Head-on-Seal"
     },
     {
         title: "M.A.P. Coordinator",
@@ -37,9 +37,9 @@ export default [
     },
     {
         title: "Assistant Ride Coordinator",
-        name: "Rich Morris",
-        email: "arc@il-chapter-z.org",
-        photo: "Rich_M-Head-on-Seal"
+        name: "Brian King",
+        email: "ridered@il-chapter-z.org",
+        photo: "Brian-Head-on-Seal"
     },
     {
         title: "Newsletter Editor",
@@ -55,8 +55,8 @@ export default [
     },
     {
         title: "Couple of the Year",
-        name: "John & Julie Nixon",
+        name: "Rich & Rhonda Morris",
         email: "coy@il-chapter-z.org",
-        photo: "John_Julie-on-Seal"
+        photo: "Rich-Rhonda"
     }
 ];
