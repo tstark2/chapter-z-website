@@ -58,20 +58,6 @@ export default {
             "logo": "Our_Inn_Place",
             "resolutions": [1, 2, 3]
         },
-        // {
-        //     "name": "Town and Kountry Kitchen",
-        //     "website": "https://www.facebook.com/townandkountrykitchen/",
-        //     "phone": "309-383-2900",
-        //     "address": {
-        //         "street": "385 Germantown Rd",
-        //         "city": "Germantown Hills",
-        //         "state": "IL",
-        //         "zip": "61548"
-        //     },
-        //     "category": "Restaurant",
-        //     "logo": "Town&Kountry",
-        //     "resolutions": [1, 2, 3]
-        // },
         {
             "name": "Big Art's Yokel",
             "website": "https://www.bigartsyokel.com",
@@ -171,20 +157,6 @@ export default {
             "resolutions": [1, 2, 3]
         },
         {
-            "name": "Germantown Hills PC",
-            "website": "https://www.germantown-pc.com/",
-            "phone": "309-648-1553",
-            "address": {
-                "street": "509 Jubilee Lane",
-                "city": "Germantown Hills",
-                "state": "IL",
-                "zip": "61548"
-            },
-            "category": "Services",
-            "logo": "Germantown_PC",
-            "resolutions": [1, 2, 3]
-        },
-        {
             "name": "Busy Corner",
             "website": "https://abusycorner.com/",
             "phone": "309-695-2361",
@@ -199,46 +171,32 @@ export default {
             "resolutions": [1, 2, 3]
         },
         {
-            "name": "Investment Strategists at Better Banks",
-            "website": "https://www.betterbanks.com/investment-strategists-better-banks",
-            "phone": "309-685-9595",
+            "name": "Hilltop Grill",
+            "website": "https://www.hilltopgrilltogo.com/",
+            "phone": "309-966-3382",
             "address": {
-                "street": "10225 N. Knoxville Avenue",
-                "city": "Peoria",
+                "street": "100 Village Ct",
+                "city": "Creve Coeur",
                 "state": "IL",
-                "zip": "61615"
+                "zip": "61610"
             },
-            "category": "Services",
-            "logo": "Better_Banks_Investments",
+            "category": "Restaurant",
+            "logo": "Hilltop_Grill",
             "resolutions": [1, 2, 3]
         },
         {
-            "name": "Ricky's Gas",
-            "website": "https://facebook.com/rickysgas",
-            "phone": "309-550-5109",
+            "name": "FroSmoke's Meatery",
+            "website": "http://frosmokes.com/",
+            "phone": "309-554-9071",
             "address": {
-                "street": "409 Jubilee Ln",
-                "city": "Germantown Hills",
+                "street": "112 Marina Drive",
+                "city": "Lacon",
                 "state": "IL",
-                "zip": "61548"
+                "zip": "61540"
             },
-            "category": "Retail",
-            "logo": "Rickys_Gas",
+            "category": "Restaurant",
+            "logo": "FroSmokes",
             "resolutions": [1, 2, 3]
         },
-        {
-            "name": "T & D Windshield",
-            "website": null,
-            "phone": "309-369-4590",
-            "address": {
-                "street": "205 John",
-                "city": "North Pekin",
-                "state": "IL",
-                "zip": "61554"
-            },
-            "category": "Services",
-            "logo": "T&D_Windshield",
-            "resolutions": [1, 2, 3]
-        }
     ]
 }
