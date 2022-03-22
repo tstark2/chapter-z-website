@@ -20,7 +20,7 @@ export default [
     {
         title: "Ride Coordinator",
         name: "Rich Morris",
-        email: "arc@il-chapter-z.org",
+        email: "rides@il-chapter-z.org",
         photo: "Rich_M-Head-on-Seal"
     },
     {
@@ -38,7 +38,7 @@ export default [
     {
         title: "Assistant Ride Coordinator",
         name: "Brian King",
-        email: "ridered@il-chapter-z.org",
+        email: "arc@il-chapter-z.org",
         photo: "Brian-Head-on-Seal"
     },
     {

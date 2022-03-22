@@ -73,20 +73,6 @@ export default {
             "resolutions": [1, 2, 3]
         },
         {
-            "name": "Kouri's Pub",
-            "website": "https://www.kourispub.com/germantown-hills/",
-            "phone": "309-383-4551",
-            "address": {
-                "street": "105 Elizabeth Pointe Drive",
-                "city": "Germantown Hills",
-                "state": "IL",
-                "zip": "61548"
-            },
-            "category": "Restaurant",
-            "logo": "Kouris_Pub",
-            "resolutions": [1, 2, 3]
-        },
-        {
             "name": "Semper Fi Cycle",
             "website": "https://semperficycle.com",
             "phone": "309-925-5191",
@@ -112,20 +98,6 @@ export default {
             },
             "category": "Restaurant",
             "logo": "Perdues",
-            "resolutions": [1, 2, 3]
-        },
-        {
-            "name": "Jack's Cafe",
-            "website": "https://www.facebook.com/JacksCafeTremont/",
-            "phone": "309-925-2233",
-            "address": {
-                "street": "130 Lake Street",
-                "city": "Tremont",
-                "state": "IL",
-                "zip": "61568"
-            },
-            "category": "Restaurant",
-            "logo": "Jacks_Cafe",
             "resolutions": [1, 2, 3]
         },
         {
