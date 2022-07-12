@@ -2,7 +2,7 @@
   <article>
     <h2>About Us</h2>
     <p>
-      Welcome to the internet home of the Gold Wing Road Riders Association (GWRRA) Illinois Chapter Z.
+      Welcome to the internet home of the GWRRA Illinois Chapter Z.
       We would like to invite you and your family to join us for some fun and motorcycle riding.
       Our Chapter has a diverse schedule of activities that includes local and long trips to GWRRA activities,
       scenic trips, and “Bucket Trip” locations.
@@ -13,11 +13,11 @@
       which they would like to participate.
     </p>
 
-    <h3>Gold Wing Road Riders Association</h3>
+    <h3>GWRRA</h3>
 
     <h4>Mission Statement</h4>
     <p>
-      Gold Wing Road Riders Association [GWRRA], founded in 1977,
+      GWRRA, founded in 1977,
       is recognized as the world's largest single-marquee motorcycle association in the world.
       GWRRA provides safety, technical, and educational services to its Members world-wide.
     </p>
