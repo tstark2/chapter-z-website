@@ -1,36 +1,12 @@
 <template>
     <header>
-        <a href="http://gwrra.org/">
-            <picture>
-                <source srcset="../assets/img/gwrraSeal/gwrraSeal@1x.webp 1x,
-                    ../assets/img/gwrraSeal/gwrraSeal@2x.webp 2x,
-                    ../assets/img/gwrraSeal/gwrraSeal@3x.webp 3x" 
-                type="image/webp">
-
-                <img src="../assets/img/gwrraSeal/gwrraSeal@1x.png" srcset="
-                    ../assets/img/gwrraSeal/gwrraSeal@2x.png 2x,
-                    ../assets/img/gwrraSeal/gwrraSeal@3x.png 3x
-                " alt="GWRRA Seal">
-            </picture>
-        </a>
+        <span><!-- national link goes here? --></span>
 
         <div id="sponsors" ref="sponsors">
             <SponsorSlider v-for="ad in ads" :key="ad"></SponsorSlider>
         </div>
 
-        <a href="http://gwrra-ildistrict.com/index.html">
-            <picture>
-                <source srcset="../assets/img/ilSeal/ilSeal@1x.webp 1x,
-                    ../assets/img/ilSeal/ilSeal@2x.webp 2x,
-                    ../assets/img/ilSeal/ilSeal@3x.webp 3x" 
-                type="image/webp">
-
-                <img src="../assets/img/ilSeal/ilSeal@1x.png" srcset="
-                    ../assets/img/ilSeal/ilSeal@2x.png 2x,
-                    ../assets/img/ilSeal/ilSeal@3x.png 3x
-                " alt="Illinois GWRRA Seal">
-            </picture>
-        </a>
+        <span><!-- district link goes here? --></span>
     </header>
 </template>
 
@@ -58,8 +34,8 @@ export default {
     },
     mounted() {
         const sponsorSection = this.$refs.sponsors;
-        
-        this.$nextTick(function() {  
+
+        this.$nextTick(function() {
             this.sponsorWidth = sponsorSection.clientWidth;
             this.adCount();
         });
@@ -90,6 +66,7 @@ header img {
     padding:3px;
     position:relative;
     overflow:hidden;
+    gap: 15px;
 }
 
 @media (max-device-width: 800px) {

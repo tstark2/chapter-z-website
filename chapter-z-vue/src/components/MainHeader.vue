@@ -8,7 +8,7 @@
                 </picture>
             </router-link>
 
-            <h1>GWRRA Illinois Chapter Z</h1>
+            <h1>Illinois Chapter Z</h1>
             <button id="menuButton" @click="openNav"><i class="fas fa-bars"></i></button>
             <nav ref="nav">
                 <router-link @click.native="closeNav" to="/">Home</router-link>
@@ -36,7 +36,7 @@ export default {
         },
         closeNav() {
             const nav = this.$refs.nav;
-            nav.classList.remove("open"); 
+            nav.classList.remove("open");
         }
     }
 }
@@ -104,12 +104,12 @@ h1 {
         grid-template-columns: 120px 1fr 40px;
         width:90vw;
     }
-    
+
     header div img {
         height:120px;
         transform:translateY(0);
     }
-    
+
     #menuButton {
         display:flex;
         background-color:transparent;

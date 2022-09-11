@@ -2,7 +2,7 @@
     <footer>
         <div>
             <div class="footerText">
-                <p>&copy; 2020 GWRRA Illinois Chapter Z</p>
+                <p>&copy; 2020 Illinois Chapter Z</p>
                 <p>Web Development by <a href="https://tstark2.us">Todd Stark II</a></p>
             </div>
             <div class="socialIcons">
