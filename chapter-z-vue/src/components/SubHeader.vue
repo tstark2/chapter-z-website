@@ -1,36 +1,8 @@
 <template>
     <header>
-        <a href="http://gwrra.org/">
-            <picture>
-                <source srcset="../assets/img/gwrraSeal/gwrraSeal@1x.webp 1x,
-                    ../assets/img/gwrraSeal/gwrraSeal@2x.webp 2x,
-                    ../assets/img/gwrraSeal/gwrraSeal@3x.webp 3x" 
-                type="image/webp">
-
-                <img src="../assets/img/gwrraSeal/gwrraSeal@1x.png" srcset="
-                    ../assets/img/gwrraSeal/gwrraSeal@2x.png 2x,
-                    ../assets/img/gwrraSeal/gwrraSeal@3x.png 3x
-                " alt="GWRRA Seal">
-            </picture>
-        </a>
-
         <div id="sponsors" ref="sponsors">
             <SponsorSlider v-for="ad in ads" :key="ad"></SponsorSlider>
         </div>
-
-        <a href="http://gwrra-ildistrict.com/index.html">
-            <picture>
-                <source srcset="../assets/img/ilSeal/ilSeal@1x.webp 1x,
-                    ../assets/img/ilSeal/ilSeal@2x.webp 2x,
-                    ../assets/img/ilSeal/ilSeal@3x.webp 3x" 
-                type="image/webp">
-
-                <img src="../assets/img/ilSeal/ilSeal@1x.png" srcset="
-                    ../assets/img/ilSeal/ilSeal@2x.png 2x,
-                    ../assets/img/ilSeal/ilSeal@3x.png 3x
-                " alt="Illinois GWRRA Seal">
-            </picture>
-        </a>
     </header>
 </template>
 
@@ -51,6 +23,7 @@ export default {
     methods: {
         adCount() {
             const count = Math.floor(this.sponsorWidth / 280);
+            console.log(count);
             for(let i = 0; i < count; i++) {
                 this.ads.push(i);
             }
@@ -58,8 +31,8 @@ export default {
     },
     mounted() {
         const sponsorSection = this.$refs.sponsors;
-        
-        this.$nextTick(function() {  
+
+        this.$nextTick(function() {
             this.sponsorWidth = sponsorSection.clientWidth;
             this.adCount();
         });
@@ -71,9 +44,6 @@ export default {
 header {
     width:75vw;
     margin: 0 auto;
-    display:grid;
-    grid-template-columns:150px 1fr 150px;
-    gap:5px;
     padding:6px 12px;
 }
 
@@ -85,11 +55,12 @@ header img {
 #sponsors {
     height:150px;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items:center;
     padding:3px;
     position:relative;
     overflow:hidden;
+  width: 100%;
 }
 
 @media (max-device-width: 800px) {
@@ -100,12 +71,11 @@ header img {
 
 @media (max-device-width: 576px) {
     header {
-        grid-template-columns: repeat(2, 1fr);
+        /*grid-template-columns: repeat(2, 1fr);*/
     }
 
     #sponsors {
-        order:3;
-        grid-column-start:span 2;
+       justify-content: center;
     }
 
     header > a {

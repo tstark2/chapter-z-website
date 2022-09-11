@@ -8,7 +8,7 @@
         </main>
         <AppFooter></AppFooter>
     </div>
-    
+
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
         AppFooter
     },
     created() {
-        document.title = "Illinois Chapter Z GWRRA";
+        document.title = "Illinois Chapter Z";
     }
 }
 </script>

@@ -1,48 +1,12 @@
 export default [
     {
         title: "GWRRA National Site",
-        href: "https://gwrra.org",
+        href: "http://gwrra.org",
         picture: "gwrraSeal",
         resolutions: [1,2,3]
     },
     {
-        title: "Motorist Awareness Program",
-        href: "https://map-gwrra.org",
-        picture: "map",
-        resolutions: [1,2]
-    },
-    {
-        title: "Membership Enhancement Program",
-        href: "https://gwrramep.org",
-        picture: "mep",
-        resolutions: [1,2,3]
-    },
-    {
-        title: "GWRRA University",
-        href: "https://gwrradot.com",
-        picture: "gwrraUniversity",
-        resolutions: [1,2,3]
-    },
-    {
-        title: "Wing Ding",
-        href: "http://43.wing-ding.org/",
-        picture: "wingDing",
-        resolutions: [1,2]
-    },
-    {
-        title: "Wing World",
-        href: "http://wingworldmag.com",
-        picture: "wingWorld",
-        resolutions: [1,2,3]
-    },
-    {
-        title: "GWRRA Store",
-        href: "https://store.gwrra.org",
-        picture: 'store',
-        resolutions: [1,2,3]
-    },
-    {
-        title: "GWRRA Illinois District",
+        title: "Illinois District",
         href: "https://gwrra-ildistrict.com",
         picture: "ilSeal",
         resolutions: [1,2,3]
@@ -65,5 +29,17 @@ export default [
         picture: "illinoisAdventure",
         resolutions: [1,2,3]
 
+    },
+    {
+        title: "Eagle Wings National Site",
+        href: "https://www.eaglewingsmotorcycleassociation.com/",
+        picture: "eagleWingsLogo",
+        resolutions: [1,2,3],
+    },
+    {
+        title: "Wing'd Riders National Site",
+        href: "https://wingdrider.com/",
+        picture: "wingDRiderLogo",
+        resolutions: [1,2],
     }
 ]

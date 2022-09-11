@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h2 class="purple">Central Illinois GWRRA</h2>
-        <p id="charter">Chartered November 12, 1995</p>
-        <p class="subheading">Friends for Fun, Safety, and Knowledge</p>
+        <h2 class="purple">Central Illinois Wing Riders</h2>
+        <p id="charter">Established November 12, 1995</p>
+        <p class="subheading">Friends for Fun, Safety, and Riding</p>
         <p>
           Monthly socials are the fourth Sunday of the month at the
           <a href="https://goo.gl/maps/hkq4DxN64XgzuKLd9" target="_blank">Hilltop Grill, 100 Village Ct, Creve Coeur, Illinois</a>
