@@ -16,13 +16,13 @@ export default {
         member: Object
     },
     computed: {
-        webpString() { 
+        webpString() {
             return `${require(`../assets/img/staff/${this.member.photo}@1x.webp`)} 1x,
-             ${require(`../assets/img/staff/${this.member.photo}@2x.webp`)} 2x, 
+             ${require(`../assets/img/staff/${this.member.photo}@2x.webp`)} 2x,
              ${require(`../assets/img/staff/${this.member.photo}@3x.webp`)} 3x`;
             },
         pngString() {
-            return `${require(`../assets/img/staff/${this.member.photo}@2x.png`)} 2x, 
+            return `${require(`../assets/img/staff/${this.member.photo}@2x.png`)} 2x,
             ${require(`../assets/img/staff/${this.member.photo}@3x.png`)} 3x`;
         },
         srcString() {
@@ -33,5 +33,7 @@ export default {
 </script>
 
 <style scoped>
-
+  img[alt="Randy House"] {
+    border-radius: 50%;
+  }
 </style>

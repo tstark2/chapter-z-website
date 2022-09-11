@@ -1,12 +1,8 @@
 <template>
     <header>
-        <span><!-- national link goes here? --></span>
-
         <div id="sponsors" ref="sponsors">
             <SponsorSlider v-for="ad in ads" :key="ad"></SponsorSlider>
         </div>
-
-        <span><!-- district link goes here? --></span>
     </header>
 </template>
 
@@ -27,6 +23,7 @@ export default {
     methods: {
         adCount() {
             const count = Math.floor(this.sponsorWidth / 280);
+            console.log(count);
             for(let i = 0; i < count; i++) {
                 this.ads.push(i);
             }
@@ -47,9 +44,6 @@ export default {
 header {
     width:75vw;
     margin: 0 auto;
-    display:grid;
-    grid-template-columns:150px 1fr 150px;
-    gap:5px;
     padding:6px 12px;
 }
 
@@ -61,12 +55,12 @@ header img {
 #sponsors {
     height:150px;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items:center;
     padding:3px;
     position:relative;
     overflow:hidden;
-    gap: 15px;
+  width: 100%;
 }
 
 @media (max-device-width: 800px) {
@@ -77,12 +71,11 @@ header img {
 
 @media (max-device-width: 576px) {
     header {
-        grid-template-columns: repeat(2, 1fr);
+        /*grid-template-columns: repeat(2, 1fr);*/
     }
 
     #sponsors {
-        order:3;
-        grid-column-start:span 2;
+       justify-content: center;
     }
 
     header > a {
