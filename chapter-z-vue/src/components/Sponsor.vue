@@ -2,14 +2,14 @@
   <div>
     <a :href="sponsor.website" target="_blank">
       <picture>
-        <source :srcset="webpString" type="image/webp"/>
-        <img :src="srcString" :srcset="pngString" :alt="sponsor.name"/>
+        <source :srcset="webpString" type="image/webp" />
+        <img :src="srcString" :srcset="pngString" :alt="sponsor.name" />
       </picture>
     </a>
     <p class="name">{{ sponsor.name }}</p>
     <a :href="makeMapLink">
       {{ sponsor.address.street }}
-      <br/>
+      <br />
       {{ sponsor.address.city }},
       {{ sponsor.address.state }}
       {{ sponsor.address.zip }}
@@ -21,9 +21,9 @@
 
 <script>
 export default {
-  name: 'Sponsor',
+  name: "Sponsor",
   props: {
-    sponsor: Object
+    sponsor: Object,
   },
   computed: {
     webpString() {
@@ -40,9 +40,11 @@ export default {
     },
     makeMapLink() {
       const location = `${this.sponsor.address.street} ${this.sponsor.address.city} ${this.sponsor.address.state} ${this.sponsor.address.zip}`;
-      return encodeURI(`https://www.google.com/maps/search/?api=1&query=${location}`);
-    }
-  }
+      return encodeURI(
+        `https://www.google.com/maps/search/?api=1&query=${location}`
+      );
+    },
+  },
 };
 </script>
 
@@ -70,5 +72,4 @@ a:hover {
 .linkContainer {
   word-break: break-all;
 }
-
 </style>

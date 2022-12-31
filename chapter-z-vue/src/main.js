@@ -8,22 +8,21 @@ import Newsletters from "./components/pages/Newsletters";
 import Sponsors from "./components/pages/Sponsors";
 import Links from "./components/pages/Links";
 
-
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-    mode: "history",
-    routes: [
-        {path: "/", component: Home,},
-        {path: "/about", component: AboutUs},
-        {path: "/staff", component: Staff},
-        {path: "/newsletters", component: Newsletters},
-        {path: "/sponsors", component: Sponsors},
-        {path: "/links", component: Links}
-    ]
+  mode: "history",
+  routes: [
+    { path: "/", component: Home },
+    { path: "/about", component: AboutUs },
+    { path: "/staff", component: Staff },
+    { path: "/newsletters", component: Newsletters },
+    { path: "/sponsors", component: Sponsors },
+    { path: "/links", component: Links },
+  ],
 });
 
 new Vue({
-    router,
-    render: h => h(App)
+  router,
+  render: (h) => h(App),
 }).$mount("#app");
