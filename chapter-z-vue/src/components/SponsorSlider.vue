@@ -1,159 +1,158 @@
 <template>
-    <div>
-        <a :href="next.website" class="next" ref="next">
-            <picture>
-                <source :srcset="nextWebP" type="image/webp">
-                <img :src="nextSrc" :srcset="nextPng" :alt="next.name">
-            </picture>
-        </a>
-        <a :href="current.website" class="first" ref="first">
-            <picture>
-                <source :srcset="currentWebP" type="image/webp">
-                <img :src="currentSrc" :srcset="currentPng" :alt="current.name">
-            </picture>
-        </a>
-    </div>
+  <div>
+    <a :href="next.website" class="next" ref="next">
+      <picture>
+        <source :srcset="nextWebP" type="image/webp" />
+        <img :src="nextSrc" :srcset="nextPng" :alt="next.name" />
+      </picture>
+    </a>
+    <a :href="current.website" class="first" ref="first">
+      <picture>
+        <source :srcset="currentWebP" type="image/webp" />
+        <img :src="currentSrc" :srcset="currentPng" :alt="current.name" />
+      </picture>
+    </a>
+  </div>
 </template>
 
 <script>
-import Sponsors from '../api/sponsors';
+import Sponsors from "../api/sponsors";
 
 export default {
-    name: "SponsorSlider",
-    data() {
-        return {
-            ids: [],
-            current: {},
-            next: {},
-            index: 0,
-            nextIndex: 1,
-            list: []
-        }
+  name: "SponsorSlider",
+  data() {
+    return {
+      ids: [],
+      current: {},
+      next: {},
+      index: 0,
+      nextIndex: 1,
+      list: [],
+    };
+  },
+  methods: {
+    sponsorIds() {
+      this.ids = Sponsors.shuffle();
+      this.list = Sponsors.list;
     },
-    methods: {
-        sponsorIds() {
-            this.ids = Sponsors.shuffle();
-            this.list = Sponsors.list;
-        },
-        getWebpString(el) {
-            let string = "";
-            for(const res of el.resolutions) {
-                string += `${require(`../assets/img/sponsors/${el.logo}@${res}x.webp`)} ${res}x, `;
-            }
-            return string;
-        },
-        getPngString(el) {
-            let string = '';
-            for(const res of el.resolutions) {
-                string += `${require(`../assets/img/sponsors/${el.logo}@${res}x.png`)} ${res}x, `;
-            }
-            return string;
-        },
-        getSrcString(el) {
-            return require(`../assets/img/sponsors/${el.logo}@1x.png`);
-        },
-        updateAds() {
-            const currentId = this.ids[this.index];
-            const nextId = this.ids[this.nextIndex];
-
-            this.current = this.list[currentId];
-            this.next = this.list[nextId];
-        }
+    getWebpString(el) {
+      let string = "";
+      for (const res of el.resolutions) {
+        string += `${require(`../assets/img/sponsors/${el.logo}@${res}x.webp`)} ${res}x, `;
+      }
+      return string;
     },
-    computed: {
-        currentWebP() {
-            return this.getWebpString(this.current);
-        },
-        currentPng() {
-            return this.getPngString(this.current);
-        },
-        currentSrc() {
-            return this.getSrcString(this.current);
-        },
-        nextWebP() {
-            return this.getWebpString(this.next);
-        },
-        nextPng() {
-            return this.getPngString(this.next);
-        },
-        nextSrc() {
-            return this.getSrcString(this.next);
-        }
+    getPngString(el) {
+      let string = "";
+      for (const res of el.resolutions) {
+        string += `${require(`../assets/img/sponsors/${el.logo}@${res}x.png`)} ${res}x, `;
+      }
+      return string;
     },
-    created() {
-        this.sponsorIds();
-        this.updateAds();
+    getSrcString(el) {
+      return require(`../assets/img/sponsors/${el.logo}@1x.png`);
     },
-    mounted() {
-        let next = this.$refs.next;
-        const oThis = this;
+    updateAds() {
+      const currentId = this.ids[this.index];
+      const nextId = this.ids[this.nextIndex];
 
-        setInterval(() => {
-            oThis.index++;
-            oThis.nextIndex++;
-            
-            if(oThis.index > oThis.ids.length - 1) {
-                oThis.index = 0;
-            }
-            if(oThis.nextIndex > oThis.ids.length - 1) {
-                oThis.nextIndex = 0;
-            }
+      this.current = this.list[currentId];
+      this.next = this.list[nextId];
+    },
+  },
+  computed: {
+    currentWebP() {
+      return this.getWebpString(this.current);
+    },
+    currentPng() {
+      return this.getPngString(this.current);
+    },
+    currentSrc() {
+      return this.getSrcString(this.current);
+    },
+    nextWebP() {
+      return this.getWebpString(this.next);
+    },
+    nextPng() {
+      return this.getPngString(this.next);
+    },
+    nextSrc() {
+      return this.getSrcString(this.next);
+    },
+  },
+  created() {
+    this.sponsorIds();
+    this.updateAds();
+  },
+  mounted() {
+    let next = this.$refs.next;
+    const oThis = this;
 
-            next.classList.add('down');
+    setInterval(() => {
+      oThis.index++;
+      oThis.nextIndex++;
 
-            setTimeout(() => {
-                oThis.current = oThis.next;
-                next.classList.add('hide');
+      if (oThis.index > oThis.ids.length - 1) {
+        oThis.index = 0;
+      }
+      if (oThis.nextIndex > oThis.ids.length - 1) {
+        oThis.nextIndex = 0;
+      }
 
-                setTimeout(() => {
-                    next.classList.remove('down');
-                }, 1000)
+      next.classList.add("down");
 
-                setTimeout(() => {
-                    next.classList.remove('hide');
-                    oThis.updateAds();
-                }, 3000);
+      setTimeout(() => {
+        oThis.current = oThis.next;
+        next.classList.add("hide");
 
-            }, 1500);
-        }, 15000);
-    }
-}
+        setTimeout(() => {
+          next.classList.remove("down");
+        }, 1000);
+
+        setTimeout(() => {
+          next.classList.remove("hide");
+          oThis.updateAds();
+        }, 3000);
+      }, 1500);
+    }, 15000);
+  },
+};
 </script>
 
 <style scoped>
 div {
-    position:relative;
-    display:block;
-    width:280px;
-    height:150px;
-    overflow:hidden;
-    box-sizing:border-box;
-    border:1px solid #000;
+  position: relative;
+  display: block;
+  width: 280px;
+  height: 150px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid #000;
 }
 
 a {
-    width:100%;
-    height:100%;
-    display:block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .first {
-    z-index:0;
+  z-index: 0;
 }
 
 .next {
-    position:absolute;
-    top:-152px;
-    left:50%;
-    transform:translateX(-50%);
-    transition:top 1s;
+  position: absolute;
+  top: -152px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 1s;
 }
 
 .next.down {
-    top:0px;
+  top: 0px;
 }
 
 .next.hide {
-    z-index:-10;
+  z-index: -10;
 }
 </style>
