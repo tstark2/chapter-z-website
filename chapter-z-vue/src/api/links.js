@@ -7,7 +7,7 @@ export default [
   },
   {
     title: "Illinois District",
-    href: "https://gwrra-ildistrict.com",
+    href: "https://ewma-il-district.weebly.com/",
     picture: "EWMA-District-Logo-Transparent",
     resolutions: [1, 2, 3],
   },
