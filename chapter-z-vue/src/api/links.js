@@ -1,13 +1,13 @@
 export default [
   {
     title: "Eagle Wings National Site",
-    href: "https://www.eaglewingsmotorcycleassociation.com/",
+    href: "https://www.ewma-world.org/",
     picture: "eagleWingsLogo",
     resolutions: [1, 2, 3],
   },
   {
     title: "Illinois District",
-    href: "https://ewma-il-district.weebly.com/",
+    href: "http://www.ewma-ildistrict.org/",
     picture: "EWMA-District-Logo-Transparent",
     resolutions: [1, 2, 3],
   },
