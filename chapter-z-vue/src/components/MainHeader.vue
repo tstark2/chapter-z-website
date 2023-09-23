@@ -150,7 +150,7 @@ h1 {
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    transition: width 1s padding 1s;
+    transition: width 1s, padding 1s;
     z-index: 3;
   }
 
