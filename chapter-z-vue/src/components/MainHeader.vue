@@ -4,10 +4,10 @@
       <router-link to="/">
         <picture>
           <source
-            srcset="../assets/img/Z_Logo_EWMA_Large_Round_transparent.webp"
+            srcset="../assets/img/Z_Logo_EWMA_Large_Round_3.webp"
             type="image/webp"
           />
-          <img src="../assets/img/Z_Logo_EWMA_Large_Round_transparent.png" />
+          <img src="../assets/img/Z_Logo_EWMA_Large_Round_3.png" />
         </picture>
       </router-link>
 

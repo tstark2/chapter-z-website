@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-img[alt="Randy House"] {
+img[alt="Randy House"], img[alt="Melody Sledgister"] {
   border-radius: 50%;
 }
 </style>

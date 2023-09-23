@@ -2,8 +2,8 @@
   <article>
     <h2>About Us</h2>
     <p>
-      Welcome to the internet home of Chapter Z – The Central Illinois Wing
-      Riders. We would like to invite you and your family to join us for some
+      Welcome to the internet home of Chapter Z.
+      We would like to invite you and your family to join us for some
       fun and motorcycle riding. Our Chapter has a diverse schedule of
       activities that includes local and long trips to motorcycling activities,
       scenic trips, and “Bucket List” locations. We try to have at least one
